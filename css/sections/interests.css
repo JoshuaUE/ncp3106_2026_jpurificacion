@@ -1,0 +1,353 @@
+/* =============================================================
+   06 / OUTSIDE ACADEMICS — interactive editorial interest index
+   ----------------------------------------------------------------
+   • Large serif typographic list (4 items, oversized)
+   • Hover/focus of any item dims siblings to 0.4, slides active
+     row 12px, prepends a numeric 01..04 via ::before
+   • Floating preview card (right column) — all four .preview-slot
+     elements stack absolutely; only the one inside the hovered/
+     focused <details> is visible. Co-located with each row so no
+     JS-computed Y is needed.
+   • Mobile (max-width: 768px) hides the floating stack and the
+     preview slots flow inline inside the open <details> panel,
+     which is a native exclusive-open accordion via name="interests".
+   ============================================================= */
+
+.interests {
+    position: relative;
+    overflow-x: hidden; /* defensive: keeps floating preview in viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.interest-stage {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 48px;
+    max-width: var(--content-width);
+    width: 100%;
+    margin: 70px auto 0;
+}
+
+/* =============================================================
+   LIST — left column
+   Each <details> opens one at a time thanks to name="interests".
+   The <summary> carries the row visuals; the panel inside carries
+   the .preview-slot (always in the DOM, visible only when its
+   <details> is :hover/:focus-within/[:open] on mobile).
+   ============================================================= */
+.interest-stage > .interest-item {
+    grid-column: 1;
+    display: block;
+    border-bottom: 1px solid var(--color-line);
+}
+
+.interest-stage > .interest-item:last-child {
+    border-bottom: 0;
+}
+
+/* <summary> resets its own button chrome; carries the row grid. */
+.interest-row {
+    all: unset;
+    position: relative;
+    display: grid;
+    grid-template-columns: 60px 1fr 24px;
+    align-items: baseline;
+    gap: 18px;
+    padding: 20px 0;
+    cursor: pointer;
+    color: var(--color-text);
+    touch-action: manipulation; /* kill iOS 300ms double-tap delay */
+    transition: opacity 250ms ease-out, transform 250ms ease-out, color 250ms ease-out;
+    box-sizing: border-box;
+    list-style: none; /* hide default <summary> disclosure marker */
+}
+
+.interest-row::-webkit-details-marker {
+    display: none; /* Safari legacy */
+}
+
+.interest-row .row-num {
+    color: var(--color-muted);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+}
+
+.interest-row .row-title {
+    margin: 0;
+    font-family: var(--font-family-heading);
+    font-size: clamp(2.3rem, 7vw, 7rem);
+    line-height: 0.85;
+    letter-spacing: -0.035em;
+    font-weight: 400;
+}
+
+.interest-row .row-caret {
+    color: var(--color-muted);
+    font-size: 1.1rem;
+    line-height: 1;
+    transition: transform 250ms ease-out, color 250ms ease-out;
+    justify-self: end;
+}
+
+/* =============================================================
+   NUMERIC PREFIX (::before) — appears in the gutter on active
+   ============================================================= */
+.interest-row::before {
+    content: attr(data-num);
+    position: absolute;
+    left: -2.5ch;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-accent);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 250ms ease-out;
+    pointer-events: none;
+}
+
+.interest-item:has(.interest-row:hover) .interest-row::before,
+.interest-item:has(.interest-row:focus-within) .interest-row::before,
+.interest-item[open] .interest-row::before,
+.interest-row:focus-visible::before {
+    opacity: 1;
+}
+
+/* =============================================================
+   DIM-SIBLINGS — driven by :has() on whichever item has a
+   hovered/focused row, replacing the .has-hover class that JS
+   used to add on the section.
+   ============================================================= */
+.interest-stage:has(.interest-row:hover) .interest-row,
+.interest-stage:has(.interest-row:focus-within) .interest-row {
+    opacity: 0.4;
+}
+
+.interest-item:has(.interest-row:hover) .interest-row,
+.interest-item:has(.interest-row:focus-within) .interest-row,
+.interest-item[open] .interest-row {
+    opacity: 1;
+    transform: translateX(12px);
+    color: var(--color-accent);
+}
+
+/* Caret rotates when the item is open (mobile) or its row is focused */
+.interest-item:has(.interest-row:hover) .row-caret,
+.interest-item:has(.interest-row:focus-within) .row-caret,
+.interest-item[open] .row-caret,
+.interest-row:focus-visible .row-caret {
+    color: var(--color-accent);
+}
+
+.interest-item[open] .row-caret {
+    transform: rotate(45deg);
+    color: var(--color-accent);
+}
+
+/* =============================================================
+   FOCUS-VISIBLE — keyboard parity with hover
+   ============================================================= */
+.interest-row:focus-visible {
+    opacity: 1;
+    transform: translateX(12px);
+    color: var(--color-accent);
+    box-shadow: inset 0 -2px 0 var(--color-accent);
+    outline: none;
+}
+
+/* =============================================================
+   MOBILE ACCORDION PANEL — hidden on desktop (floating preview
+   takes over), expanded inline on mobile via native <details>[open].
+   Uses grid-template-rows 0fr -> 1fr for smooth height animation.
+   ============================================================= */
+.interest-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 250ms ease-out, margin-top 250ms ease-out;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.interest-panel > .interest-panel-inner {
+    min-height: 0;
+    overflow: hidden;
+    padding: 0 0 0 78px;
+}
+
+.interest-item[open] .interest-panel {
+    grid-template-rows: 1fr;
+    margin-top: 14px;
+}
+
+.interest-item[open] .interest-panel > .interest-panel-inner {
+    padding: 14px 0 6px 78px;
+}
+
+/* =============================================================
+   FLOATING PREVIEW CARD — right column on desktop.
+   Each <details> carries its own .preview-slot. They all stack
+   absolutely in the same right-column area; only the slot whose
+   parent is :hover/:focus-within is visible.
+   ============================================================= */
+.preview-slot {
+    position: absolute;
+    top: 0;
+    right: var(--page-inline);
+    width: var(--space-preview-w);
+    min-height: 360px;
+    padding: 18px;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    background:
+        linear-gradient(145deg, rgba(245, 239, 231, 0.04), rgba(9, 11, 14, 0.78));
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: scale(0.96);
+    transition: opacity 250ms ease, transform 250ms ease;
+    pointer-events: none;
+    z-index: var(--z-overlay);
+    will-change: transform;
+}
+
+.interest-item:has(.interest-row:hover) .preview-slot,
+.interest-item:has(.interest-row:focus-within) .preview-slot {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.preview-slot .preview-media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    color: rgba(245, 239, 231, 0.62);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 18px;
+    background: linear-gradient(135deg, #1c2330, #0a0d12);
+}
+
+.preview-slot .preview-media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.preview-slot .preview-tags {
+    margin: 14px 0 0;
+    color: var(--color-muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.preview-slot .preview-status {
+    margin: 8px 0 0;
+    color: var(--color-accent);
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+/* ----- Per-item placeholder treatments ----- */
+.preview-slot[data-key="gaming"] .preview-media {
+    background:
+        radial-gradient(circle at 30% 30%, rgba(143, 183, 202, 0.42), transparent 55%),
+        linear-gradient(135deg, #1c2330, #0a0d12);
+}
+
+.preview-slot[data-key="tech"] .preview-media {
+    background:
+        linear-gradient(rgba(143, 183, 202, 0.06) 1px, transparent 1px) 0 0 / 24px 24px,
+        linear-gradient(90deg, rgba(143, 183, 202, 0.06) 1px, transparent 1px) 0 0 / 24px 24px,
+        linear-gradient(135deg, #14181f, #1c2632 50%, #0a0d12);
+}
+
+.preview-slot[data-key="music"] .preview-media {
+    background: linear-gradient(180deg, #0d1320, #08090d);
+}
+
+.preview-slot[data-key="manhwa"] .preview-media {
+    background: linear-gradient(180deg, #1a1410, #0a0807);
+    aspect-ratio: 3 / 5;
+    border: 1px solid rgba(245, 239, 231, 0.08);
+}
+
+.preview-slot[data-key="manhwa"] .preview-media::after {
+    content: '';
+    position: absolute;
+    inset: 14% 18% auto 18%;
+    height: 1px;
+    background: rgba(245, 239, 231, 0.14);
+    box-shadow:
+        0 calc((100% - 14% - 14%) / 3) 0 rgba(245, 239, 231, 0.14),
+        0 calc(((100% - 14% - 14%) / 3) * 2) 0 rgba(245, 239, 231, 0.14);
+}
+
+/* =============================================================
+   MOBILE — single-column stack, panels and slots flow inline.
+   The native <details name="interests"> enforces exclusive open.
+   ============================================================= */
+@media (max-width: 768px) {
+    .interest-stage {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    /* Opened accordion panels can exceed the viewport; let the section
+       grow and scroll instead of clipping (`.section` is overflow:hidden). */
+    .interests.section {
+        height: auto;
+        min-height: 100svh;
+        overflow-y: auto;
+    }
+
+    /* Floating slots collapse into the open accordion panel */
+    .preview-slot {
+        position: static;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+        width: auto;
+        min-height: 0;
+        box-shadow: none;
+    }
+
+    /* Only the open item's slot is visible on mobile */
+    .interest-item:not([open]) .preview-slot {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Desktop: neutralize the accordion instead of hiding it. The
+       .preview-slot lives INSIDE .interest-panel — display: none on the
+       panel would hide the floating preview with it. The slot is
+       position: absolute (containing block .interest-stage), so an
+       unclipped wrapper is all the float needs. */
+    .interest-stage > .interest-item .interest-panel {
+        display: block;
+        grid-template-rows: none;
+        margin-top: 0;
+        overflow: visible;
+        transition: none;
+    }
+
+    .interest-stage > .interest-item .interest-panel > .interest-panel-inner {
+        display: block;
+        min-height: 0;
+        padding: 0;
+        overflow: visible;
+    }
+}

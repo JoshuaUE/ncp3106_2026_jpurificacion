@@ -1,0 +1,266 @@
+/* =============================================================
+   HERO SECTION — Editorial Engineering Layout
+   - No glass card (no backdrop-filter, no border-radius container)
+   - Typography + portrait carry the visual weight
+   - Single atmospheric glow; grid at 5% opacity
+   ============================================================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 170px;
+    position: relative;
+}
+
+/* --- Two-column split: text left, photo right --- */
+.hero-split {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    column-gap: clamp(2rem, 4vw, 5rem);
+    position: relative;
+    z-index: 1;
+}
+
+/* Override hero-content max-width inside split */
+.hero-split .hero-content {
+    max-width: unset;
+    margin: 0;
+    width: 100%;
+}
+
+/* --- Hero-local grid: 5% opacity — graph-paper texture, not a cage --- */
+.hero-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image:
+        linear-gradient(rgba(245, 239, 231, 0.6) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 239, 231, 0.6) 1px, transparent 1px);
+    background-size: 70px 70px;
+    mask-image: linear-gradient(to bottom, black, transparent 92%);
+    /* Static — no animation needed at this opacity */
+    animation: none;
+}
+
+/* --- Single atmospheric glow centered behind content --- */
+.glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+}
+
+.glow-one {
+    width: 540px;
+    height: 540px;
+    /* Centered behind name block, slightly elevated */
+    top: 15%;
+    left: 20%;
+    background: var(--color-glow-1);
+    opacity: 0.18;
+}
+
+/* glow-two is removed from DOM; this rule is kept as a no-op guard */
+.glow-two {
+    display: none;
+}
+
+/* --- Hero metadata row --- */
+.hero-meta {
+    position: absolute;
+    top: 104px;
+    left: var(--page-inline);
+    right: var(--page-inline);
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: auto;
+    transform: translateY(-4vh);
+}
+
+/* =============================================================
+   EDITORIAL NAME TREATMENT
+   - "JOSHUA"       → solid warm off-white (.name-first)
+   - "PURIFICACION" → transparent + 1px outline, 60% opacity,
+                      scaled slightly smaller, negative top margin
+                      so it visually overlaps the bottom of JOSHUA
+   ============================================================= */
+
+/* h1 wrapper: sets the scale anchor */
+.hero h1 {
+    margin: 8px 0 0;
+    font-family: var(--font-family-heading);
+    font-size: clamp(3.4rem, 10vw, 7.2rem);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    font-weight: 400;
+    text-transform: uppercase;
+    /* Prevent the overlapping surname from causing horizontal overflow */
+    overflow: hidden;
+}
+
+/* First name — solid, warm cream */
+.hero h1 .name-first {
+    display: block;
+    color: var(--color-text); /* warm off-white #f5efe7 */
+    -webkit-text-stroke: 0;
+}
+
+/* Surname — outlined, 60% opacity, slightly smaller, pulls up to overlap */
+.hero h1 .name-last {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-text);
+    opacity: 0.6;
+    /* Scale to ~88% of h1's font-size via em — stays fluid at all viewports */
+    font-size: 0.88em;
+    /* Negative top margin creates the editorial overlap: ~40% of line-height */
+    margin-top: -0.32em;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Retained: cinematic sheen sweep across the outlined surname */
+.hero h1 .name-last.outlined::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -140%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(143, 183, 202, 0.7) 45%,
+        rgba(143, 183, 202, 0.18) 55%,
+        transparent 100%
+    );
+    mix-blend-mode: screen;
+    transform: skewX(-18deg);
+    filter: blur(8px);
+    opacity: 0.44;
+    animation: sheen 5s linear infinite;
+    pointer-events: none;
+}
+
+/* --- Name footer: identity statement --- */
+.hero-visual {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0px;
+}
+
+.name-box {
+    display: inline-block;
+    /* No border, no background, no padding — fully flat */
+}
+
+/* Identity string: primary typographic statement */
+.name-footer {
+    margin-top: 8px;
+    color: var(--color-muted);
+    font-size: 0.78rem;
+    /* Increased tracking + weight → prominent identity label */
+    letter-spacing: 0.22em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* --- Hero bottom bar: tagline + CTA --- */
+.hero-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    max-width: 760px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-line-soft);
+}
+
+.hero-bottom p {
+    max-width: 460px;
+    color: var(--color-muted-strong);
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+}
+
+/* --- Scroll hint --- */
+.hero-index {
+    position: absolute;
+    right: var(--page-inline);
+    bottom: 38px;
+    color: var(--color-muted);
+    font-size: 0.62rem;
+    line-height: 1.8;
+    letter-spacing: 0.13em;
+    text-align: right;
+}
+
+/* =============================================================
+   CINEMATIC PORTRAIT — right column
+   - mask-image fades bottom edge into background seamlessly
+   - filter: desaturates + applies a cool blue-gray tint
+   - z-index allows portrait to sit naturally above the glow
+     but below interactive text elements
+   ============================================================= */
+.hero-photo-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* No overflow:hidden — the mask-image handles edge blending */
+    overflow: visible;
+    pointer-events: none;
+    /* Portrait sits above glow but below all interactive content */
+    z-index: 0;
+}
+
+.hero-photo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+
+    /* Desaturate + subtle cool tint to match the blue-gray environment */
+    filter:
+        saturate(0.8)
+        brightness(0.92)
+        drop-shadow(0 0 50px rgba(143, 183, 202, 0.1));
+
+    /* Bottom fade — portrait dissolves into background seamlessly.
+       70% visible → 100% transparent at the very bottom edge. */
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 55%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 55%,
+        transparent 100%
+    );
+}
+
+/* Retained: subtle floating label at bottom-left of photo */
+.hero-photo-label {
+    position: absolute;
+    bottom: 28px;
+    left: 0;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: rgba(245, 239, 231, 0.28);
+    writing-mode: horizontal-tb;
+    padding-left: 16px;
+    border-left: 1px solid rgba(245, 239, 231, 0.15);
+}

@@ -1,0 +1,55 @@
+.personality-intro {
+    max-width: var(--content-width);
+    margin: 60px auto 48px;
+}
+
+.traits {
+    max-width: var(--content-width);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.traits article {
+    padding: 30px 25px 35px;
+    border-right: 1px solid var(--color-line);
+    background: linear-gradient(180deg, rgba(245, 239, 231, 0.015), transparent);
+}
+
+.traits article:last-child {
+    border-right: 0;
+}
+
+.traits span {
+    color: var(--color-accent);
+    font-size: 0.7rem;
+}
+
+.traits h3 {
+    margin-top: 70px;
+    font-size: 1.4rem;
+}
+
+.traits p {
+    margin-top: 10px;
+    color: var(--color-muted);
+    line-height: 1.75;
+}
+
+.quote {
+    max-width: var(--content-width);
+    margin: 140px auto 30px;
+    text-align: center;
+}
+
+blockquote {
+    margin-top: 22px;
+    font-family: var(--font-family-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    font-weight: 400;
+}

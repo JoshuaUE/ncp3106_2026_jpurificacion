@@ -1,0 +1,17 @@
+.about-layout {
+    max-width: var(--content-width);
+    margin: 54px auto 0;
+    display: grid;
+    grid-template-columns: 1.35fr 0.8fr;
+    gap: clamp(44px, 7vw, 100px);
+    align-items: center;
+}
+
+.about-copy {
+    max-width: 760px;
+}
+
+.about-copy h2 {
+    margin-top: 18px;
+    max-width: 620px;
+}

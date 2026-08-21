@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Joshua Purificacion — Computer Engineering student, builder, and creative.">
+    <title>Joshua Purificacion — Bionote</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!-- Atmospheric background — single glow + minimal grid texture -->
+    <div class="background" aria-hidden="true">
+        <div class="bg-grid"></div>
+        <div class="bg-glow glow-one"></div>
+    </div>
+
+    <!-- Minimal navigation -->
+    <header class="site-nav">
+        <a href="#hero" class="brand">JP<span>.</span></a>
+
+        <nav>
+            <a href="#about"><span class="nav-num">01</span> ABOUT</a>
+            <a href="#projects"><span class="nav-num">02</span> PROJECTS</a>
+            <a href="#connect"><span class="nav-num">03</span> CONNECT</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- =========================================================
+             HERO
+        ========================================================== -->
+        <section class="hero section" id="hero">
+            <div class="hero-grid"></div>
+            <div class="glow glow-one"></div>
+            <div class="glow glow-two"></div>
+
+            <div class="hero-meta animate-in" style="--delay: 0ms;">
+                <span>01 / PROFILE</span>
+                <span>STATUS: BUILDING</span>
+            </div>
+
+            <div class="hero-split">
+                <div class="hero-content">
+                    <p class="eyebrow animate-in" style="--delay: 80ms;">COMPUTER ENGINEERING / STUDENT / BUILDER</p>
+
+                    <div class="hero-visual animate-in" style="--delay: 160ms;">
+                        <!-- Flat editorial name — no glass card wrapper -->
+                        <div class="name-box">
+                            <h1>
+                                <!-- First name: solid warm off-white -->
+                                <span class="name-first">JOSHUA</span><br>
+                                <!-- Surname: transparent outline, 60% opacity, overlaps first name -->
+                                <span class="name-last outlined">PURIFICACION</span>
+                            </h1>
+
+                            <!-- Primary identity statement: high tracking, bold -->
+                            <div class="name-footer">ENGINEERING &nbsp;&nbsp; DESIGN &nbsp;&nbsp; CREATIVITY</div>
+                        </div>
+                    </div>
+
+                    <div class="hero-bottom animate-in" style="--delay: 240ms;">
+                        <p>
+                            Exploring the space between hardware, software,
+                            engineering, and creativity.
+                        </p>
+
+                        <a href="#about" class="circle-link" aria-label="Scroll to About">
+                            ↓
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-photo-wrap animate-in" style="--delay: 200ms;" aria-hidden="true">
+                    <img src="assets/hero.png" alt="Joshua Purificacion" class="hero-photo">
+                    <div class="hero-photo-label">JOSHUA · PURIFICACION</div>
+                </div>
+            </div>
+
+            <div class="hero-index">SCROLL TO EXPLORE<br>↓</div>
+        </section>
+
+
+        <!-- =========================================================
+             ABOUT / BIONOTE
+        ========================================================== -->
+        <section class="about section" id="about">
+            <div class="section-label">
+                <span>02</span>
+                <span>ABOUT ME</span>
+            </div>
+
+            <div class="about-layout">
+                <div class="about-copy">
+                    <p class="eyebrow animate-in" style="--delay: 0ms;">THE BIONOTE</p>
+
+                    <h2 class="animate-in" style="--delay: 80ms;">
+                        An engineer in progress,
+                        <em>with a creative side.</em>
+                    </h2>
+
+                    <p class="body-copy animate-in" style="--delay: 140ms;">
+                        Joshua Purificacion is a Computer Engineering undergraduate
+                        at the University of the East. Alongside his academic work,
+                        he explores practical engineering concepts, system
+                        development, electronics, programming, and visual design.
+                    </p>
+
+                    <p class="body-copy animate-in" style="--delay: 200ms;">
+                        His interests extend beyond the classroom into technology,
+                        digital creativity, gaming, music, and hands-on projects.
+                        He approaches new challenges with patience, curiosity,
+                        and a willingness to experiment.
+                    </p>
+                </div>
+
+                <aside class="profile-card animate-in" style="--delay: 160ms;">
+                    <div class="profile-image image-fallback">
+                        <img src="assets/profile.png"
+                             alt="Joshua Purificacion"
+                             onerror="this.style.display='none'; this.parentElement.classList.add('fallback-active');">
+                        <span class="fallback-text">JP</span>
+                    </div>
+
+                    <div class="profile-info">
+                        <span>NAME</span>
+                        <strong>Joshua Purificacion</strong>
+
+                        <span>FIELD</span>
+                        <strong>Computer Engineering</strong>
+
+                        <span>LOCATION</span>
+                        <strong>Philippines</strong>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             WHAT I DO
+        ========================================================== -->
+        <section class="capabilities section" id="capabilities">
+            <div class="section-label">
+                <span>03</span>
+                <span>WHAT I DO</span>
+            </div>
+
+            <div class="section-heading">
+                <p class="eyebrow animate-in" style="--delay: 0ms;">CURRENT INTERESTS</p>
+                <h2 class="animate-in" style="--delay: 80ms;">Different tools.<br><em>One direction.</em></h2>
+            </div>
+
+            <div class="capability-grid">
+                <article class="capability-card animate-in" style="--delay: 140ms;">
+                    <span class="card-number">01</span>
+                    <h3>ENGINEERING</h3>
+                    <p>ESP32 · Arduino · Sensors · Digital Logic · Electronics</p>
+                    <span class="card-arrow">↗</span>
+                </article>
+
+                <article class="capability-card animate-in" style="--delay: 220ms;">
+                    <span class="card-number">02</span>
+                    <h3>SOFTWARE</h3>
+                    <p>Python · Java · Web Development · System Development</p>
+                    <span class="card-arrow">↗</span>
+                </article>
+
+                <article class="capability-card animate-in" style="--delay: 300ms;">
+                    <span class="card-number">03</span>
+                    <h3>CREATIVE</h3>
+                    <p>Digital Art · UI Design · Visual Design · Music</p>
+                    <span class="card-arrow">↗</span>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             PROJECT GALLERY — static HTML cards, CSS snap gallery
+        ========================================================== -->
+        <section class="projects section" id="projects">
+            <div class="section-label">
+                <span>04</span>
+                <span>SELECTED WORK</span>
+            </div>
+
+            <div class="projects-section-inner">
+                <div class="projects-strip">
+
+                    <!-- PROJECT 01 -->
+                    <article class="proj-card animate-in" style="--delay: 80ms;">
+                        <div class="proj-gallery" role="region" aria-label="OmniSense images">
+                            <!-- Radio 1 → Slide 1 -->
+                            <input type="radio" name="g-omni" id="g-omni-1" class="g-radio" checked>
+                            <div class="proj-gallery-slide">
+                                <img src="assets/omnisense.jpg"
+                                     alt="OmniSense device on display table"
+                                     loading="eager"
+                                     onerror="this.style.display='none';">
+                                <span class="proj-fallback" aria-hidden="true">OMNI<br>SENSE</span>
+                            </div>
+                            <!-- Radio 2 → Slide 2 -->
+                            <input type="radio" name="g-omni" id="g-omni-2" class="g-radio">
+                            <div class="proj-gallery-slide">
+                                <img src="assets/omnisense-1.png"
+                                     alt="OmniSense IRIS integration screenshot"
+                                     loading="lazy"
+                                     onerror="this.style.display='none';">
+                                <span class="proj-fallback" aria-hidden="true">IRIS</span>
+                            </div>
+                            <!-- Dots: each label targets its corresponding radio -->
+                            <div class="proj-gallery-dots" aria-hidden="true">
+                                <label for="g-omni-1"></label>
+                                <label for="g-omni-2"></label>
+                            </div>
+                            <!-- Back & Next arrows: contextual pure CSS controls -->
+                            <div class="proj-gallery-prev" aria-hidden="true">
+                                <label for="g-omni-1">‹</label>
+                                <label for="g-omni-2">‹</label>
+                            </div>
+                            <div class="proj-gallery-next" aria-hidden="true">
+                                <label for="g-omni-1">›</label>
+                                <label for="g-omni-2">›</label>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <div class="proj-meta">
+                                <span class="proj-num">01</span>
+                                <span class="proj-category">EMBEDDED SYSTEM</span>
+                            </div>
+                            <h3 class="proj-title">OMNI<br>SENSE</h3>
+                            <p class="proj-desc">An IoT-powered automated pet feeder using an ESP32, ultrasonic sensors, and an OLED display — built for real-time monitoring and threshold-based alerts.</p>
+                            <div class="proj-tags">
+                                <span>ESP32</span>
+                                <span>IoT</span>
+                                <span>HC-SR04</span>
+                                <span>EMBEDDED</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 02 -->
+                    <article class="proj-card animate-in" style="--delay: 160ms;">
+                        <div class="proj-gallery" role="region" aria-label="ThisIsMe app images">
+                            <input type="radio" name="g-tim" id="g-tim-1" class="g-radio" checked>
+                            <div class="proj-gallery-slide">
+                                <img src="assets/thisisme.jpg"
+                                     alt="ThisIsMe app home screen"
+                                     loading="eager"
+                                     onerror="this.style.display='none';">
+                                <span class="proj-fallback" aria-hidden="true">THIS<br>IS ME</span>
+                            </div>
+                            <input type="radio" name="g-tim" id="g-tim-2" class="g-radio">
+                            <div class="proj-gallery-slide">
+                                <img src="assets/thisisme-1.jpg" alt="ThisIsMe screen 1" loading="lazy" onerror="this.style.display='none';"><span class="proj-fallback" aria-hidden="true">01</span>
+                            </div>
+                            <input type="radio" name="g-tim" id="g-tim-3" class="g-radio">
+                            <div class="proj-gallery-slide">
+                                <img src="assets/thisisme-2.jpg" alt="ThisIsMe screen 2" loading="lazy" onerror="this.style.display='none';"><span class="proj-fallback" aria-hidden="true">02</span>
+                            </div>
+                            <input type="radio" name="g-tim" id="g-tim-4" class="g-radio">
+                            <div class="proj-gallery-slide">
+                                <img src="assets/thisisme-3.jpg" alt="ThisIsMe screen 3" loading="lazy" onerror="this.style.display='none';"><span class="proj-fallback" aria-hidden="true">03</span>
+                            </div>
+                            <input type="radio" name="g-tim" id="g-tim-5" class="g-radio">
+                            <div class="proj-gallery-slide">
+                                <img src="assets/thisisme-4.jpg" alt="ThisIsMe screen 4" loading="lazy" onerror="this.style.display='none';"><span class="proj-fallback" aria-hidden="true">04</span>
+                            </div>
+                            <div class="proj-gallery-dots" aria-hidden="true">
+                                <label for="g-tim-1"></label>
+                                <label for="g-tim-2"></label>
+                                <label for="g-tim-3"></label>
+                                <label for="g-tim-4"></label>
+                                <label for="g-tim-5"></label>
+                            </div>
+                            <div class="proj-gallery-prev" aria-hidden="true">
+                                <label for="g-tim-1">‹</label>
+                                <label for="g-tim-2">‹</label>
+                                <label for="g-tim-3">‹</label>
+                                <label for="g-tim-4">‹</label>
+                                <label for="g-tim-5">‹</label>
+                            </div>
+                            <div class="proj-gallery-next" aria-hidden="true">
+                                <label for="g-tim-1">›</label>
+                                <label for="g-tim-2">›</label>
+                                <label for="g-tim-3">›</label>
+                                <label for="g-tim-4">›</label>
+                                <label for="g-tim-5">›</label>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <div class="proj-meta">
+                                <span class="proj-num">02</span>
+                                <span class="proj-category">ANDROID APP</span>
+                            </div>
+                            <h3 class="proj-title">THIS<br>IS ME</h3>
+                            <p class="proj-desc">A personal Android music player app with custom UI, playlist management, and playback controls — designed around personality and aesthetic.</p>
+                            <div class="proj-tags">
+                                <span>Android</span>
+                                <span>Java</span>
+                                <span>UI Design</span>
+                                <span>Music</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 03 -->
+                    <article class="proj-card animate-in" style="--delay: 240ms;">
+                        <div class="proj-gallery" role="region" aria-label="Hope Harbor game images">
+                            <input type="radio" name="g-hh" id="g-hh-1" class="g-radio" checked>
+                            <div class="proj-gallery-slide">
+                                <img src="assets/hope-harbor.jpg"
+                                     alt="Hope Harbor title screen"
+                                     loading="eager"
+                                     onerror="this.style.display='none';">
+                                <span class="proj-fallback" aria-hidden="true">HOPE<br>HARBOR</span>
+                            </div>
+                            <input type="radio" name="g-hh" id="g-hh-2" class="g-radio">
+                            <div class="proj-gallery-slide">
+                                <img src="assets/hope-harbor-1.jpg" alt="Hope Harbor screen 1" loading="lazy" onerror="this.style.display='none';"><span class="proj-fallback" aria-hidden="true">01</span>
+                            </div>
+                            <input type="radio" name="g-hh" id="g-hh-3" class="g-radio">
+                            <div class="proj-gallery-slide">
+                                <img src="assets/hope-harbor-2.jpg" alt="Hope Harbor screen 2" loading="lazy" onerror="this.style.display='none';"><span class="proj-fallback" aria-hidden="true">02</span>
+                            </div>
+                            <input type="radio" name="g-hh" id="g-hh-4" class="g-radio">
+                            <div class="proj-gallery-slide">
+                                <img src="assets/hope-harbor-3.jpg" alt="Hope Harbor screen 3" loading="lazy" onerror="this.style.display='none';"><span class="proj-fallback" aria-hidden="true">03</span>
+                            </div>
+                            <input type="radio" name="g-hh" id="g-hh-5" class="g-radio">
+                            <div class="proj-gallery-slide">
+                                <img src="assets/hope-harbor-4.jpg" alt="Hope Harbor screen 4" loading="lazy" onerror="this.style.display='none';"><span class="proj-fallback" aria-hidden="true">04</span>
+                            </div>
+                            <div class="proj-gallery-dots" aria-hidden="true">
+                                <label for="g-hh-1"></label>
+                                <label for="g-hh-2"></label>
+                                <label for="g-hh-3"></label>
+                                <label for="g-hh-4"></label>
+                                <label for="g-hh-5"></label>
+                            </div>
+                            <div class="proj-gallery-prev" aria-hidden="true">
+                                <label for="g-hh-1">‹</label>
+                                <label for="g-hh-2">‹</label>
+                                <label for="g-hh-3">‹</label>
+                                <label for="g-hh-4">‹</label>
+                                <label for="g-hh-5">‹</label>
+                            </div>
+                            <div class="proj-gallery-next" aria-hidden="true">
+                                <label for="g-hh-1">›</label>
+                                <label for="g-hh-2">›</label>
+                                <label for="g-hh-3">›</label>
+                                <label for="g-hh-4">›</label>
+                                <label for="g-hh-5">›</label>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <div class="proj-meta">
+                                <span class="proj-num">03</span>
+                                <span class="proj-category">ANDROID GAME</span>
+                            </div>
+                            <h3 class="proj-title">HOPE<br>HARBOR</h3>
+                            <p class="proj-desc">A pixel-art Android game set in a coastal village at golden hour. Features a handcrafted world, lighthouse exploration, and a relaxing atmosphere.</p>
+                            <div class="proj-tags">
+                                <span>Android</span>
+                                <span>Pixel Art</span>
+                                <span>Game Dev</span>
+                                <span>Java</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div><!-- .projects-strip -->
+            </div><!-- .projects-section-inner -->
+        </section>
+
+
+        <!-- =========================================================
+             PERSONALITY
+        ========================================================== -->
+        <section class="personality section" id="personality">
+            <div class="section-label">
+                <span>05</span>
+                <span>PERSONALITY</span>
+            </div>
+
+            <div class="personality-intro">
+                <p class="eyebrow animate-in" style="--delay: 0ms;">BEYOND THE TECHNICAL</p>
+                <h2 class="animate-in" style="--delay: 80ms;">
+                    The person behind<br>
+                    <em>the projects.</em>
+                </h2>
+            </div>
+
+            <div class="traits">
+                <article class="animate-in" style="--delay: 140ms;">
+                    <span>01</span>
+                    <h3>PATIENT</h3>
+                    <p>I enjoy working through problems until I understand how they work.</p>
+                </article>
+
+                <article class="animate-in" style="--delay: 220ms;">
+                    <span>02</span>
+                    <h3>CURIOUS</h3>
+                    <p>I like exploring systems beyond what is required and learning by experimenting.</p>
+                </article>
+
+                <article class="animate-in" style="--delay: 300ms;">
+                    <span>03</span>
+                    <h3>CREATIVE</h3>
+                    <p>I care about both how something functions and how it looks and feels.</p>
+                </article>
+            </div>
+
+            <div class="quote">
+                <span class="animate-in" style="--delay: 0ms;">PERSONAL MOTTO</span>
+                <blockquote class="animate-in" style="--delay: 120ms;">
+                    "Don't be afraid to<br>
+                    <em>take a leap of faith.</em>"
+                </blockquote>
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             06 / OUTSIDE ACADEMICS — interactive interest index
+             Hover/focus any item to dim siblings and summon the
+             floating preview card on the right. On mobile the
+             preview is replaced by an inline CSS-grid accordion
+             that expands beneath the tapped word.
+        ========================================================== -->
+        <section class="interests section" id="interests" aria-label="Outside academics">
+            <div class="section-label">
+                <span>06</span>
+                <span>OUTSIDE ACADEMICS</span>
+            </div>
+
+            <div class="interest-stage">
+                <!--
+                    Each .interest-item is a <details name="interests"> so mobile
+                    gets an exclusive-open accordion for free. Each item also
+                    carries a .preview-slot co-located with its row, which stacks
+                    absolutely on desktop and flows inline on mobile. Only the
+                    slot inside the hovered/focused item is visible.
+                -->
+                <details class="interest-item animate-in" style="--delay: 80ms;" name="interests">
+                    <summary class="interest-row" data-key="gaming" data-num="01">
+                        <span class="row-num" aria-hidden="true">01</span>
+                        <strong class="row-title">GAMING</strong>
+                        <span class="row-caret" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="interest-panel">
+                        <div class="interest-panel-inner preview-slot" data-key="gaming">
+                            <div class="preview-media" data-label="GAMING / BACKROOMS TOGETHER">
+                                <img src="assets/gaming.png" alt="Backrooms Together gameplay scene" loading="lazy">
+                            </div>
+                            <p class="preview-tags">BACKROOMS TOGETHER</p>
+                            <p class="preview-status">STATUS: ACTIVE</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="interest-item animate-in" style="--delay: 160ms;" name="interests">
+                    <summary class="interest-row" data-key="tech" data-num="02">
+                        <span class="row-num" aria-hidden="true">02</span>
+                        <strong class="row-title">TECH</strong>
+                        <span class="row-caret" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="interest-panel">
+                        <div class="interest-panel-inner preview-slot" data-key="tech">
+                            <div class="preview-media" data-label="TECH / ESP32 PROJECT">
+                                <img src="assets/tech.png" alt="ESP32 project setup" loading="lazy">
+                            </div>
+                            <p class="preview-tags">ESP32 PROJECT</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="interest-item animate-in" style="--delay: 240ms;" name="interests">
+                    <summary class="interest-row" data-key="music" data-num="03">
+                        <span class="row-num" aria-hidden="true">03</span>
+                        <strong class="row-title">MUSIC</strong>
+                        <span class="row-caret" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="interest-panel">
+                        <div class="interest-panel-inner preview-slot" data-key="music">
+                            <div class="preview-media" data-label="MUSIC / ADO - AIAIA / THE FIRST TAKE">
+                                <img src="assets/music.png" alt="Ado - AiAiA / THE FIRST TAKE" loading="lazy">
+                            </div>
+                            <p class="preview-tags">ADO - AIAIA / THE FIRST TAKE</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="interest-item animate-in" style="--delay: 320ms;" name="interests">
+                    <summary class="interest-row" data-key="manhwa" data-num="04">
+                        <span class="row-num" aria-hidden="true">04</span>
+                        <strong class="row-title">MANHWA</strong>
+                        <span class="row-caret" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="interest-panel">
+                        <div class="interest-panel-inner preview-slot" data-key="manhwa">
+                            <div class="preview-media" data-label="MANHWA / SOLO LEVELING CHAPTER 187">
+                                <img src="assets/manhwa.png" alt="Solo Leveling chapter 187" loading="lazy">
+                            </div>
+                            <p class="preview-tags">SOLO LEVELING · CHAPTER 187</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             CONNECT
+        ========================================================== -->
+        <section class="connect section" id="connect">
+            <div class="section-label">
+                <span>07</span>
+                <span>CONNECTION</span>
+            </div>
+
+            <div class="connect-content">
+                <p class="eyebrow animate-in" style="--delay: 0ms;">FIND ME ONLINE</p>
+                <h2 class="animate-in" style="--delay: 80ms;">LET'S<br><em>CONNECT.</em></h2>
+
+                <div class="social-list">
+                    <a href="https://github.com/JoshuaPurificacion" target="_blank" rel="noopener" class="animate-in" style="--delay: 140ms;">
+                        <span>01</span>
+                        <strong>GITHUB</strong>
+                        <span>↗</span>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@joshcpurificacion" target="_blank" rel="noopener" class="animate-in" style="--delay: 200ms;">
+                        <span>02</span>
+                        <strong>TIKTOK</strong>
+                        <span>↗</span>
+                    </a>
+
+                    <a href="https://www.facebook.com/joshua.purificacion.33" target="_blank" rel="noopener" class="animate-in" style="--delay: 260ms;">
+                        <span>03</span>
+                        <strong>FACEBOOK</strong>
+                        <span>↗</span>
+                    </a>
+
+                    <a href="mailto:purificacionjosh@gmail.com" class="animate-in" style="--delay: 320ms;">
+                        <span>04</span>
+                        <strong>EMAIL</strong>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <footer>
+                <span>JOSHUA PURIFICACION</span>
+                <span>COMPUTER ENGINEERING · 2026</span>
+            </footer>
+        </section>
+    </main>
+
+    <!-- Progress Navigation — dots are anchors so native hash + scroll-snap
+         handles navigation. Active state is driven by body:has(:target) in CSS. -->
+    <aside class="progress-nav" aria-label="Section progress">
+        <div class="progress-dots">
+            <a class="progress-dot" href="#hero"        aria-label="Go to section 1"></a>
+            <a class="progress-dot" href="#about"       aria-label="Go to section 2"></a>
+            <a class="progress-dot" href="#capabilities" aria-label="Go to section 3"></a>
+            <a class="progress-dot" href="#projects"    aria-label="Go to section 4"></a>
+            <a class="progress-dot" href="#personality" aria-label="Go to section 5"></a>
+            <a class="progress-dot" href="#interests"   aria-label="Go to section 6"></a>
+            <a class="progress-dot" href="#connect"     aria-label="Go to section 7"></a>
+        </div>
+    </aside>
+
+</body>
+</html>

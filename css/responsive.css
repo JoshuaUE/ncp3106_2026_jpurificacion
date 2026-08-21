@@ -1,0 +1,142 @@
+@media (max-width: 850px) {
+    .site-nav nav {
+        display: none;
+    }
+
+    .section {
+        padding-top: 105px;
+    }
+
+    .about-layout,
+    .project-feature {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        max-width: 420px;
+    }
+
+    .capability-grid,
+    .traits {
+        grid-template-columns: 1fr;
+    }
+
+    .traits article {
+        border-right: 0;
+        border-bottom: 1px solid var(--color-line);
+    }
+
+    .project-heading {
+        display: block;
+    }
+
+    .heading-note {
+        margin-top: 20px;
+    }
+
+    .project-feature {
+        min-height: auto;
+    }
+
+    .project-image {
+        min-height: 330px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        position: static;
+        margin-top: 80px;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    /* Collapse hero split to single column on tablet/mobile */
+    .hero-split {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        transform: translateY(0);
+    }
+
+    /* Portrait hidden on tablet/mobile — typography carries the layout */
+    .hero-photo-wrap {
+        display: none;
+    }
+
+    /* Ensure overlapping name treatment doesn't overflow the container */
+    .name-box {
+        overflow: hidden;
+        max-width: 100%;
+    }
+}
+
+@media (max-height: 900px) {
+    .hero-content {
+        transform: translateY(-2vh);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-split {
+        grid-template-columns: 1fr;
+    }
+    .hero-content {
+        transform: translateY(0);
+    }
+    .hero-bottom {
+        margin-top: 12px;
+        padding-top: 12px;
+    }
+}
+
+
+@media (max-width: 520px) {
+    .section {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 100px;
+    }
+
+    .section-label,
+    .hero-meta {
+        left: 20px;
+        right: 20px;
+    }
+
+    .hero h1 {
+        font-size: 18vw;
+    }
+
+    .hero-bottom {
+        align-items: flex-start;
+        gap: 25px;
+        flex-direction: column;
+    }
+
+    .section-heading h2,
+    .about-copy h2,
+    .personality-intro h2,
+    .connect h2 {
+        font-size: 14vw;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+        scroll-snap-type: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
