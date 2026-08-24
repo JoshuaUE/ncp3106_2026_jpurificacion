@@ -105,8 +105,6 @@
     letter-spacing: -0.04em;
     font-weight: 400;
     text-transform: uppercase;
-    /* Prevent the overlapping surname from causing horizontal overflow */
-    overflow: hidden;
 }
 
 /* First name — solid, warm cream */

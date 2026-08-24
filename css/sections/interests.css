@@ -4,13 +4,13 @@
    • Large serif typographic list (4 items, oversized)
    • Hover/focus of any item dims siblings to 0.4, slides active
      row 12px, prepends a numeric 01..04 via ::before
-   • Floating preview card (right column) — all four .preview-slot
-     elements stack absolutely; only the one inside the hovered/
-     focused <details> is visible. Co-located with each row so no
-     JS-computed Y is needed.
-   • Mobile (max-width: 768px) hides the floating stack and the
-     preview slots flow inline inside the open <details> panel,
-     which is a native exclusive-open accordion via name="interests".
+   • Shared floating preview panel (#interest-preview) — right column
+     on desktop, driven by js/main.js. Replaces the old per-slot
+     approach (4 duplicated .preview-slot blocks) that caused the
+     manhwa portrait (aspect-ratio 3/5) to overflow height:100svh.
+   • Mobile (max-width: 768px): panel shown inline below the list
+     after JS sets .is-visible; native <details name="interests">
+     exclusive-open accordion remains for the row dim/active effect.
    ============================================================= */
 
 .interests {
@@ -24,7 +24,8 @@
 .interest-stage {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    /* Left column: the 4 interest rows. Right column: shared preview panel. */
+    grid-template-columns: minmax(0, 1fr) var(--space-preview-w);
     align-items: start;
     gap: 48px;
     max-width: var(--content-width);
@@ -35,9 +36,7 @@
 /* =============================================================
    LIST — left column
    Each <details> opens one at a time thanks to name="interests".
-   The <summary> carries the row visuals; the panel inside carries
-   the .preview-slot (always in the DOM, visible only when its
-   <details> is :hover/:focus-within/[:open] on mobile).
+   The <summary> carries the row visuals.
    ============================================================= */
 .interest-stage > .interest-item {
     grid-column: 1;
@@ -49,7 +48,7 @@
     border-bottom: 0;
 }
 
-/* <summary> resets its own button chrome; carries the row grid. */
+/* Button reset; every row keeps the same fixed grid footprint. */
 .interest-row {
     all: unset;
     position: relative;
@@ -66,9 +65,7 @@
     list-style: none; /* hide default <summary> disclosure marker */
 }
 
-.interest-row::-webkit-details-marker {
-    display: none; /* Safari legacy */
-}
+
 
 .interest-row .row-num {
     color: var(--color-muted);
@@ -113,7 +110,6 @@
 
 .interest-item:has(.interest-row:hover) .interest-row::before,
 .interest-item:has(.interest-row:focus-within) .interest-row::before,
-.interest-item[open] .interest-row::before,
 .interest-row:focus-visible::before {
     opacity: 1;
 }
@@ -129,25 +125,19 @@
 }
 
 .interest-item:has(.interest-row:hover) .interest-row,
-.interest-item:has(.interest-row:focus-within) .interest-row,
-.interest-item[open] .interest-row {
+.interest-item:has(.interest-row:focus-within) .interest-row {
     opacity: 1;
-    transform: translateX(12px);
     color: var(--color-accent);
 }
 
 /* Caret rotates when the item is open (mobile) or its row is focused */
 .interest-item:has(.interest-row:hover) .row-caret,
 .interest-item:has(.interest-row:focus-within) .row-caret,
-.interest-item[open] .row-caret,
 .interest-row:focus-visible .row-caret {
     color: var(--color-accent);
 }
 
-.interest-item[open] .row-caret {
-    transform: rotate(45deg);
-    color: var(--color-accent);
-}
+
 
 /* =============================================================
    FOCUS-VISIBLE — keyboard parity with hover
@@ -160,52 +150,35 @@
     outline: none;
 }
 
-/* =============================================================
-   MOBILE ACCORDION PANEL — hidden on desktop (floating preview
-   takes over), expanded inline on mobile via native <details>[open].
-   Uses grid-template-rows 0fr -> 1fr for smooth height animation.
-   ============================================================= */
-.interest-panel {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 250ms ease-out, margin-top 250ms ease-out;
-    margin-top: 0;
-    overflow: hidden;
-}
 
-.interest-panel > .interest-panel-inner {
-    min-height: 0;
-    overflow: hidden;
-    padding: 0 0 0 78px;
-}
-
-.interest-item[open] .interest-panel {
-    grid-template-rows: 1fr;
-    margin-top: 14px;
-}
-
-.interest-item[open] .interest-panel > .interest-panel-inner {
-    padding: 14px 0 6px 78px;
-}
 
 /* =============================================================
-   FLOATING PREVIEW CARD — right column on desktop.
-   Each <details> carries its own .preview-slot. They all stack
-   absolutely in the same right-column area; only the slot whose
-   parent is :hover/:focus-within is visible.
+   SHARED FLOATING PREVIEW PANEL — right column on desktop,
+   driven by js/main.js. JS adds/removes .is-visible and updates
+   [data-key], img src/alt, and caption text.
    ============================================================= */
-.preview-slot {
-    position: absolute;
-    top: 0;
-    right: var(--page-inline);
-    width: var(--space-preview-w);
-    min-height: 360px;
+.interest-preview {
+    /* Sit in the right grid column, spanning all rows */
+    grid-column: 2;
+    grid-row: 1 / -1;
+    align-self: start;
+    /* Stick near the top of the stage */
+    position: sticky;
+    top: 126px; /* matches .section padding-top (components.css) */
+
     padding: 18px;
     border: 1px solid var(--color-line);
     border-radius: var(--radius-md);
     background:
         linear-gradient(145deg, rgba(245, 239, 231, 0.04), rgba(9, 11, 14, 0.78));
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+
+    /* Bound height so tall portrait images never clip the section edge.
+       126px = .section padding-top; 88px = padding-bottom; 70px = stage margin-top */
+    max-height: calc(100svh - 126px - 88px - 70px);
+    overflow: hidden;
+
+    /* Hidden until JS activates */
     opacity: 0;
     transform: scale(0.96);
     transition: opacity 250ms ease, transform 250ms ease;
@@ -214,37 +187,42 @@
     will-change: transform;
 }
 
-.interest-item:has(.interest-row:hover) .preview-slot,
-.interest-item:has(.interest-row:focus-within) .preview-slot {
+.interest-preview.is-visible {
     opacity: 1;
     transform: scale(1);
+    pointer-events: auto;
 }
 
-.preview-slot .preview-media {
+.interest-preview .preview-media {
     position: relative;
-    aspect-ratio: 4 / 3;
+    width: 100%;
     border-radius: var(--radius-sm);
     overflow: hidden;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Limit media height so caption stays visible and section isn't overflowed */
+    max-height: calc(100svh - 126px - 88px - 70px - 80px);
+    background: linear-gradient(135deg, #1c2330, #0a0d12);
     color: rgba(245, 239, 231, 0.62);
     font-size: 0.72rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     text-align: center;
     padding: 18px;
-    background: linear-gradient(135deg, #1c2330, #0a0d12);
 }
 
-.preview-slot .preview-media img {
+.interest-preview .preview-media img {
     width: 100%;
     height: 100%;
+    max-height: inherit;
     display: block;
-    object-fit: cover;
+    /* contain (not cover) — portrait images letterbox instead of cropping */
+    object-fit: contain;
     border-radius: inherit;
 }
 
-.preview-slot .preview-tags {
+.interest-preview .preview-tags {
     margin: 14px 0 0;
     color: var(--color-muted);
     font-size: 0.7rem;
@@ -252,7 +230,7 @@
     text-transform: uppercase;
 }
 
-.preview-slot .preview-status {
+.interest-preview .preview-status {
     margin: 8px 0 0;
     color: var(--color-accent);
     font-size: 0.66rem;
@@ -260,31 +238,30 @@
     text-transform: uppercase;
 }
 
-/* ----- Per-item placeholder treatments ----- */
-.preview-slot[data-key="gaming"] .preview-media {
+/* ----- Per-key placeholder background treatments ----- */
+.interest-preview[data-key="gaming"] .preview-media {
     background:
         radial-gradient(circle at 30% 30%, rgba(143, 183, 202, 0.42), transparent 55%),
         linear-gradient(135deg, #1c2330, #0a0d12);
 }
 
-.preview-slot[data-key="tech"] .preview-media {
+.interest-preview[data-key="tech"] .preview-media {
     background:
         linear-gradient(rgba(143, 183, 202, 0.06) 1px, transparent 1px) 0 0 / 24px 24px,
         linear-gradient(90deg, rgba(143, 183, 202, 0.06) 1px, transparent 1px) 0 0 / 24px 24px,
         linear-gradient(135deg, #14181f, #1c2632 50%, #0a0d12);
 }
 
-.preview-slot[data-key="music"] .preview-media {
+.interest-preview[data-key="music"] .preview-media {
     background: linear-gradient(180deg, #0d1320, #08090d);
 }
 
-.preview-slot[data-key="manhwa"] .preview-media {
+.interest-preview[data-key="manhwa"] .preview-media {
     background: linear-gradient(180deg, #1a1410, #0a0807);
-    aspect-ratio: 3 / 5;
     border: 1px solid rgba(245, 239, 231, 0.08);
 }
 
-.preview-slot[data-key="manhwa"] .preview-media::after {
+.interest-preview[data-key="manhwa"] .preview-media::after {
     content: '';
     position: absolute;
     inset: 14% 18% auto 18%;
@@ -293,11 +270,12 @@
     box-shadow:
         0 calc((100% - 14% - 14%) / 3) 0 rgba(245, 239, 231, 0.14),
         0 calc(((100% - 14% - 14%) / 3) * 2) 0 rgba(245, 239, 231, 0.14);
+    pointer-events: none;
 }
 
 /* =============================================================
-   MOBILE — single-column stack, panels and slots flow inline.
-   The native <details name="interests"> enforces exclusive open.
+   MOBILE — single-column stack, shared panel shown inline.
+   Rows never expand; the preview is shown below the fixed list.
    ============================================================= */
 @media (max-width: 768px) {
     .interest-stage {
@@ -313,41 +291,69 @@
         overflow-y: auto;
     }
 
-    /* Floating slots collapse into the open accordion panel */
-    .preview-slot {
+    /* Shared panel: static flow below the list on mobile.
+       Hidden by default; JS adds .is-visible when a row is tapped. */
+    .interest-preview {
+        grid-column: 1;
+        grid-row: auto;
         position: static;
-        opacity: 1;
-        transform: none;
-        pointer-events: auto;
         width: auto;
-        min-height: 0;
+        max-height: none;
+        opacity: 0;
+        transform: none;
+        pointer-events: none;
+        margin-top: 0;
+        transition: opacity 250ms ease, margin-top 250ms ease;
+        /* visually hidden when not active */
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+        border: none;
         box-shadow: none;
     }
 
-    /* Only the open item's slot is visible on mobile */
-    .interest-item:not([open]) .preview-slot {
-        display: none;
+    .interest-preview.is-visible {
+        opacity: 1;
+        height: auto;
+        overflow: visible;
+        padding: 18px;
+        border: 1px solid var(--color-line);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        pointer-events: auto;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .interest-preview .preview-media {
+        max-height: none;
     }
 }
 
+/* Desktop: the preview is absolutely positioned beside the list.
+   It is deliberately outside the layout flow, so changing from a wide
+   gaming image to a tall manhwa image can never resize or move a row. */
 @media (min-width: 769px) {
-    /* Desktop: neutralize the accordion instead of hiding it. The
-       .preview-slot lives INSIDE .interest-panel — display: none on the
-       panel would hide the floating preview with it. The slot is
-       position: absolute (containing block .interest-stage), so an
-       unclipped wrapper is all the float needs. */
-    .interest-stage > .interest-item .interest-panel {
+    .interest-stage {
         display: block;
-        grid-template-rows: none;
-        margin-top: 0;
-        overflow: visible;
-        transition: none;
+        box-sizing: border-box;
+        padding-right: calc(var(--space-preview-w) + 48px);
     }
 
-    .interest-stage > .interest-item .interest-panel > .interest-panel-inner {
-        display: block;
-        min-height: 0;
-        padding: 0;
-        overflow: visible;
+    .interest-stage > .interest-item {
+        width: 100%;
     }
+
+    .interest-preview {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: var(--space-preview-w);
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
+
+/* No list row changes position on focus or hover. */
+.interest-row:focus-visible {
+    transform: none;
 }
