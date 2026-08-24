@@ -9,11 +9,15 @@
 </head>
 
 <body>
-    <!-- Atmospheric background — single glow + minimal grid texture -->
+    <!-- Atmospheric background — independently moving depth layers -->
     <div class="background" aria-hidden="true">
         <div class="bg-grid"></div>
         <div class="bg-glow glow-one"></div>
+        <div class="bg-glow glow-two"></div>
+        <div class="bg-glow glow-three"></div>
     </div>
+
+    <div id="cursor-blob" aria-hidden="true"></div>
 
     <!-- Minimal navigation -->
     <header class="site-nav">
@@ -159,7 +163,7 @@
                     <span class="card-arrow">↗</span>
                 </article>
 
-                <article class="capability-card animate-in" style="--delay: 220ms;">
+<article class="capability-card animate-in" style="--delay: 220ms;">
                     <span class="card-number">02</span>
                     <h3>SOFTWARE</h3>
                     <p>Python · Java · Web Development · System Development</p>
@@ -392,26 +396,55 @@
                 </h2>
             </div>
 
-            <div class="traits">
-                <article class="animate-in" style="--delay: 140ms;">
-                    <span>01</span>
-                    <h3>PATIENT</h3>
-                    <p>I enjoy working through problems until I understand how they work.</p>
-                </article>
+            <div class="personality-quiz animate-in" id="personality-quiz" style="--delay: 140ms;" aria-labelledby="quiz-title">
+                <div class="quiz-topline">
+                    <p id="quiz-title">QUICK PERSONALITY CHECK</p>
+                    <p class="quiz-progress" aria-live="polite">QUESTION <span data-quiz-current>1</span> / 3</p>
+                </div>
 
-                <article class="animate-in" style="--delay: 220ms;">
-                    <span>02</span>
-                    <h3>CURIOUS</h3>
-                    <p>I like exploring systems beyond what is required and learning by experimenting.</p>
-                </article>
+                <div class="quiz-steps">
+                    <section class="quiz-step is-current" data-step="0" aria-labelledby="quiz-q1">
+                        <h3 id="quiz-q1">When a project gets difficult, what feels most natural?</h3>
+                        <div class="quiz-answers" role="group" aria-labelledby="quiz-q1">
+                            <button type="button" data-trait="patient">Break it into smaller steps and stay with it.</button>
+                            <button type="button" data-trait="curious">Trace the cause and see what else I can discover.</button>
+                            <button type="button" data-trait="creative">Try a different angle until a new idea clicks.</button>
+                        </div>
+                    </section>
 
-                <article class="animate-in" style="--delay: 300ms;">
-                    <span>03</span>
-                    <h3>CREATIVE</h3>
-                    <p>I care about both how something functions and how it looks and feels.</p>
-                </article>
+                    <section class="quiz-step" data-step="1" aria-labelledby="quiz-q2" hidden>
+                        <h3 id="quiz-q2">What pulls you into a new project first?</h3>
+                        <div class="quiz-answers" role="group" aria-labelledby="quiz-q2">
+                            <button type="button" data-trait="patient">The satisfaction of making every part work reliably.</button>
+                            <button type="button" data-trait="curious">The chance to test what it can do.</button>
+                            <button type="button" data-trait="creative">The possibility of making it feel memorable.</button>
+                        </div>
+                    </section>
+
+                    <section class="quiz-step" data-step="2" aria-labelledby="quiz-q3" hidden>
+                        <h3 id="quiz-q3">How do you learn something new best?</h3>
+                        <div class="quiz-answers" role="group" aria-labelledby="quiz-q3">
+                            <button type="button" data-trait="patient">Practice it steadily until the details make sense.</button>
+                            <button type="button" data-trait="curious">Experiment, ask questions, and follow the interesting paths.</button>
+                            <button type="button" data-trait="creative">Build something with it and make it my own.</button>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="quiz-controls">
+                    <button type="button" class="quiz-back" disabled>← BACK</button>
+                    <button type="button" class="quiz-next" disabled>NEXT →</button>
+                </div>
+
+                <section class="quiz-result" hidden aria-live="polite" aria-labelledby="quiz-result-title">
+                    <div class="result-motif" aria-hidden="true"></div>
+                    <p class="eyebrow">YOUR RESULT</p>
+                    <h3 id="quiz-result-title" tabindex="-1"></h3>
+                    <p class="quiz-result-copy"></p>
+                    <p class="quiz-result-trait"></p>
+                    <button type="button" class="quiz-restart">TRY AGAIN ↻</button>
+                </section>
             </div>
-
             <div class="quote">
                 <span class="animate-in" style="--delay: 0ms;">PERSONAL MOTTO</span>
                 <blockquote class="animate-in" style="--delay: 120ms;">
@@ -436,77 +469,66 @@
             </div>
 
             <div class="interest-stage">
-                <!--
-                    Each .interest-item is a <details name="interests"> so mobile
-                    gets an exclusive-open accordion for free. Each item also
-                    carries a .preview-slot co-located with its row, which stacks
-                    absolutely on desktop and flows inline on mobile. Only the
-                    slot inside the hovered/focused item is visible.
-                -->
-                <details class="interest-item animate-in" style="--delay: 80ms;" name="interests">
-                    <summary class="interest-row" data-key="gaming" data-num="01">
+                <!-- Fixed interaction list: each row updates the shared preview.
+                     No accordion panel is inserted into the row flow. -->
+                <article class="interest-item animate-in" style="--delay: 80ms;">
+                    <button type="button" class="interest-row" data-key="gaming" data-num="01"
+                             data-src="assets/gaming.png"
+                             data-alt="Backrooms Together gameplay scene"
+                             data-label="GAMING / BACKROOMS TOGETHER"
+                             data-status="ACTIVE">
                         <span class="row-num" aria-hidden="true">01</span>
                         <strong class="row-title">GAMING</strong>
                         <span class="row-caret" aria-hidden="true">+</span>
-                    </summary>
-                    <div class="interest-panel">
-                        <div class="interest-panel-inner preview-slot" data-key="gaming">
-                            <div class="preview-media" data-label="GAMING / BACKROOMS TOGETHER">
-                                <img src="assets/gaming.png" alt="Backrooms Together gameplay scene" loading="lazy">
-                            </div>
-                            <p class="preview-tags">BACKROOMS TOGETHER</p>
-                            <p class="preview-status">STATUS: ACTIVE</p>
-                        </div>
-                    </div>
-                </details>
+                    </button>
+                </article>
 
-                <details class="interest-item animate-in" style="--delay: 160ms;" name="interests">
-                    <summary class="interest-row" data-key="tech" data-num="02">
+                <article class="interest-item animate-in" style="--delay: 160ms;">
+                    <button type="button" class="interest-row" data-key="tech" data-num="02"
+                             data-src="assets/tech.png"
+                             data-alt="ESP32 project setup"
+                             data-label="TECH / ESP32 PROJECT">
                         <span class="row-num" aria-hidden="true">02</span>
                         <strong class="row-title">TECH</strong>
                         <span class="row-caret" aria-hidden="true">+</span>
-                    </summary>
-                    <div class="interest-panel">
-                        <div class="interest-panel-inner preview-slot" data-key="tech">
-                            <div class="preview-media" data-label="TECH / ESP32 PROJECT">
-                                <img src="assets/tech.png" alt="ESP32 project setup" loading="lazy">
-                            </div>
-                            <p class="preview-tags">ESP32 PROJECT</p>
-                        </div>
-                    </div>
-                </details>
+                    </button>
+                </article>
 
-                <details class="interest-item animate-in" style="--delay: 240ms;" name="interests">
-                    <summary class="interest-row" data-key="music" data-num="03">
+                <article class="interest-item animate-in" style="--delay: 240ms;">
+                    <button type="button" class="interest-row" data-key="music" data-num="03"
+                             data-src="assets/music.png"
+                             data-alt="Ado - AiAiA / THE FIRST TAKE"
+                             data-label="MUSIC / ADO - AIAIA / THE FIRST TAKE">
                         <span class="row-num" aria-hidden="true">03</span>
                         <strong class="row-title">MUSIC</strong>
                         <span class="row-caret" aria-hidden="true">+</span>
-                    </summary>
-                    <div class="interest-panel">
-                        <div class="interest-panel-inner preview-slot" data-key="music">
-                            <div class="preview-media" data-label="MUSIC / ADO - AIAIA / THE FIRST TAKE">
-                                <img src="assets/music.png" alt="Ado - AiAiA / THE FIRST TAKE" loading="lazy">
-                            </div>
-                            <p class="preview-tags">ADO - AIAIA / THE FIRST TAKE</p>
-                        </div>
-                    </div>
-                </details>
+                    </button>
+                </article>
 
-                <details class="interest-item animate-in" style="--delay: 320ms;" name="interests">
-                    <summary class="interest-row" data-key="manhwa" data-num="04">
+                <article class="interest-item animate-in" style="--delay: 320ms;">
+                    <button type="button" class="interest-row" data-key="manhwa" data-num="04"
+                             data-src="assets/manhwa.png"
+                             data-alt="Solo Leveling chapter 187"
+                             data-label="MANHWA / SOLO LEVELING CHAPTER 187">
                         <span class="row-num" aria-hidden="true">04</span>
                         <strong class="row-title">MANHWA</strong>
                         <span class="row-caret" aria-hidden="true">+</span>
-                    </summary>
-                    <div class="interest-panel">
-                        <div class="interest-panel-inner preview-slot" data-key="manhwa">
-                            <div class="preview-media" data-label="MANHWA / SOLO LEVELING CHAPTER 187">
-                                <img src="assets/manhwa.png" alt="Solo Leveling chapter 187" loading="lazy">
-                            </div>
-                            <p class="preview-tags">SOLO LEVELING · CHAPTER 187</p>
-                        </div>
+                    </button>
+                </article>
+
+                <!-- Shared floating preview panel — driven by js/main.js.
+                     On desktop: position sticky in the right grid column.
+                     On mobile: shown inline below the list when .is-visible.
+                     Replaces the four duplicated .preview-slot blocks that
+                     caused the manhwa portrait (aspect-ratio 3/5) to overflow
+                     the section's height:100svh clipping boundary. -->
+                <div id="interest-preview" class="interest-preview" aria-hidden="true">
+                    <div class="preview-media">
+                        <img src="" alt="" loading="lazy">
                     </div>
-                </details>
+                    <p class="preview-tags"></p>
+                    <p class="preview-status" hidden></p>
+                </div>
             </div>
         </section>
 
@@ -562,15 +584,17 @@
          handles navigation. Active state is driven by body:has(:target) in CSS. -->
     <aside class="progress-nav" aria-label="Section progress">
         <div class="progress-dots">
-            <a class="progress-dot" href="#hero"        aria-label="Go to section 1"></a>
-            <a class="progress-dot" href="#about"       aria-label="Go to section 2"></a>
-            <a class="progress-dot" href="#capabilities" aria-label="Go to section 3"></a>
-            <a class="progress-dot" href="#projects"    aria-label="Go to section 4"></a>
-            <a class="progress-dot" href="#personality" aria-label="Go to section 5"></a>
-            <a class="progress-dot" href="#interests"   aria-label="Go to section 6"></a>
-            <a class="progress-dot" href="#connect"     aria-label="Go to section 7"></a>
+            <a class="progress-dot" href="#hero"         data-label="HOME"         aria-label="Go to section 1"></a>
+            <a class="progress-dot" href="#about"        data-label="ABOUT"        aria-label="Go to section 2"></a>
+            <a class="progress-dot" href="#capabilities" data-label="CAPABILITIES" aria-label="Go to section 3"></a>
+            <a class="progress-dot" href="#projects"     data-label="PROJECTS"     aria-label="Go to section 4"></a>
+            <a class="progress-dot" href="#personality"  data-label="PERSONALITY"  aria-label="Go to section 5"></a>
+            <a class="progress-dot" href="#interests"    data-label="INTERESTS"    aria-label="Go to section 6"></a>
+            <a class="progress-dot" href="#connect"      data-label="CONNECT"      aria-label="Go to section 7"></a>
         </div>
-    </aside>
+</aside>
 
+    <!-- Interest section shared preview panel — plain DOM JS, no framework -->
+    <script src="js/main.js" defer></script>
 </body>
 </html>
