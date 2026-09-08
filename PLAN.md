@@ -6,6 +6,23 @@
 
 ## 1. Site Architecture (9 pages)
 
+### Implementation status
+
+All nine pages and the shared stylesheet are implemented:
+
+- [x] Home — `index.html`
+- [x] What is Computer Engineering? — `about-cpe.html`
+- [x] CpE at UE — `cpe-ue.html`
+- [x] Specializations — `specializations.html`
+- [x] Careers — `careers.html`
+- [x] Faculty — `faculty.html`
+- [x] SCPES Organization — `scpes.html`
+- [x] Student Projects — `projects.html`
+- [x] FAQ + Contact — `contact.html`
+- [x] Shared presentation — `css/style.css`
+
+The nine-page architecture and the planned page-specific interactions are now implemented. Continue with verification, content review, and responsive QA.
+
 | # | Page | File |
 |---|------|------|
 | 1 | Home | `index.html` |
@@ -72,39 +89,49 @@ Single sticky navbar, identical across all pages, active page highlighted:
 
 ## 5. Content Plan (per page)
 
-- **Home:** hero banner + tagline, 3–4 "what you'll find here" cards linking to other pages, program highlights strip, CTA buttons ("Learn about CpE," "See Careers")
-- **What is CpE:** definition, hardware/software relationship, major areas, real-world applications, importance in society
-- **CpE at UE:** program overview, objectives, skills developed, labs/facilities, student projects teaser, research/innovation activities
-- **Specializations:** 8–10 cards (Embedded Systems, IoT, Networks, Cybersecurity, AI/ML, Data Engineering, Robotics, Hardware/Architecture, Cloud/Edge), each with description + example tech + career path; filterable by category (JS)
-- **Careers:** 10–12 roles as cards/table with brief responsibilities
-- **Faculty:** grid of cards — photo, name, title, specialization, courses
-- **SCPES:** about, objectives, officers grid, activities/events
-- **Projects:** gallery/grid with modal detail view, filterable by category
-- **Contact/FAQ:** accordion FAQ + contact form (client-side validation) + official links
+- [x] **Home:** hero banner + tagline, 3–4 "what you'll find here" cards linking to other pages, program highlights strip, CTA buttons ("Learn about CpE," "See Careers")
+- [x] **What is CpE:** definition, hardware/software relationship, major areas, real-world applications, importance in society
+- [x] **CpE at UE:** program overview, objectives, skills developed, labs/facilities, student projects teaser, research/innovation activities
+- [x] **Specializations:** 9 cards with category filtering via JS
+- [x] **Careers:** 12 role cards with live search filtering
+- [x] **Faculty:** 6 profile cards with modal details; illustrative profiles are labeled
+- [x] **SCPES:** organization overview, 8 officer cards, activities, events, and join information
+- [x] **Projects:** 12 cards with 7-category filtering and modal details; illustrative content is labeled
+- [x] **Contact/FAQ:** 10-question accordion, validated contact form, department information, and official links
 
 ## 6. JavaScript Scope
 
-- Mobile nav active-link tracking
-- Card filtering on Specializations and Projects pages
-- Accordion-driven FAQ
-- Scroll-to-top button
-- Simple contact form validation
-- Optional: dark/light mode toggle (persisted via localStorage in the real deliverable files)
+- [ ] Mobile nav active-link tracking
+- [x] Card filtering on Specializations and Projects pages
+- [x] Accordion-driven FAQ
+- [x] Scroll-to-top button
+- [x] Simple contact form validation on the Contact/FAQ page
+- [x] Dark/light mode toggle persisted via localStorage
+- [x] Connect filtering, search, form, and project-modal branches to page markup
 
 ## 7. Build Order
 
-1. Shared `style.css` — color variables, typography, spacing scale, header/footer styles
-2. Home page (establishes the navbar/footer pattern to copy into all other pages)
-3. About CpE → CpE at UE → Specializations → Careers → Faculty
-4. SCPES → Projects
-5. Contact/FAQ (needs form JS + accordion)
-6. JS interactivity pass across all pages
-7. Responsive QA pass (mobile / tablet / desktop) on every page
+1. [x] Shared `style.css` — color variables, typography, spacing scale, header/footer styles
+2. [x] Home page (establishes the navbar/footer pattern to copy into all other pages)
+3. [x] About CpE → CpE at UE
+4. [x] Specializations → Careers → Faculty
+5. [x] SCPES → Projects
+6. [x] Contact/FAQ
+7. [x] JS interactivity pass across all pages
+8. [ ] Responsive QA pass (mobile / tablet / desktop) on every page
+
+## 8. Current Notes
+
+- All nine pages are present and linked through the shared navigation and footer.
+- JavaScript hooks for filtering, career search, contact validation, project modals, theme persistence, and scroll-to-top are connected to page markup.
+- `assets/` contains `cpe logo.png`, `mamlim.jpg`, `sir ej.jpg`, and `sironofre.jpg`; `images/` is currently empty. Check provenance and suitability before using any additional asset.
+- Complete the responsive QA pass and continue verifying official UE content and illustrative-content notices.
 
 ---
 
 ## Open Questions / Decisions Pending
 - [ ] Confirm exact UE brand colors (maroon shade, accent color)
 - [ ] Confirm real vs. placeholder faculty info (names, photos) — do NOT use Lorem ipsum or fake official info
-- [ ] Confirm whether dark/light mode toggle is in scope
-- [ ] Any real project examples to feature on the Projects page, or should these be illustrative/generic to start?
+- [x] Confirm whether dark/light mode toggle is in scope
+- [x] Use verification notices for illustrative faculty, SCPES, and project content
+- [ ] Replace or supplement illustrative content with verified official or student-provided details where available

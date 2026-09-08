@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Projects | UE CpE Portal</title>
+<meta name="description" content="Browse illustrative student projects from the BS Computer Engineering program at UE. Filter by category, view details in modals — embedded, IoT, AI, robotics, networks, and more.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="topbar-strip py-1 d-none d-md-block">
+  <div class="container d-flex justify-content-between">
+    <span><i class="bi bi-cpu me-1"></i> BS Computer Engineering — University of the East</span>
+    <span><a href="contact.html">FAQ &amp; Contact</a> <span class="mx-2">|</span> <a href="https://www.ue.edu.ph" target="_blank" rel="noopener">ue.edu.ph <i class="bi bi-box-arrow-up-right"></i></a></span>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg site-nav sticky-top" aria-label="Main navigation">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html"><span class="brand-badge">CpE</span> UE Computer Engineering</a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About CpE</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="about-cpe.html">What is CpE?</a></li>
+            <li><a class="dropdown-item" href="cpe-ue.html">CpE at UE</a></li>
+            <li><a class="dropdown-item" href="specializations.html">Specializations</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+        <li class="nav-item"><a class="nav-link" href="faculty.html">Faculty</a></li>
+        <li class="nav-item"><a class="nav-link" href="scpes.html">SCPES</a></li>
+        <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><button class="theme-toggle" data-theme-toggle type="button"><i class="bi bi-moon-stars"></i> Dark</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero py-5">
+  <div class="container py-2">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active text-white" aria-current="page">Projects</li>
+      </ol>
+    </nav>
+    <h1 class="display-6 fw-bold">Student Projects Showcase</h1>
+    <p class="lead mb-0" style="color:#EAD3D7">Capstone projects, competition entries, and SCPES initiatives — illustrative examples of what CpE students build.</p>
+  </div>
+</header>
+
+<main class="section-pad">
+  <div class="container">
+    <div class="alert alert-warning d-flex gap-2 small" role="note">
+      <i class="bi bi-exclamation-triangle"></i>
+      <div><strong>Content notice:</strong> Projects below are <em>illustrative examples</em> representing typical CpE capstone and competition work. They are <strong>not verified</strong> as actual UE student projects. Real projects vary by year, adviser, and resources. For actual student work, attend the annual CpE project exhibit or contact the department.</div>
+    </div>
+
+    <div class="mb-4" data-filter-group="#projectGrid" data-count="#projectCount">
+      <div class="d-flex flex-wrap gap-2" role="group" aria-label="Filter projects">
+        <button class="filter-pill active" data-filter="all" type="button">All</button>
+        <button class="filter-pill" data-filter="embedded" type="button">Embedded</button>
+        <button class="filter-pill" data-filter="iot" type="button">IoT</button>
+        <button class="filter-pill" data-filter="ai" type="button">AI/ML</button>
+        <button class="filter-pill" data-filter="robotics" type="button">Robotics</button>
+        <button class="filter-pill" data-filter="networks" type="button">Networks</button>
+        <button class="filter-pill" data-filter="hardware" type="button">Hardware</button>
+        <button class="filter-pill" data-filter="software" type="button">Software</button>
+      </div>
+      <div class="mt-2 small text-muted"><span id="projectCount">12</span> projects shown</div>
+    </div>
+
+    <div class="row g-4" id="projectGrid">
+      <article class="col-md-6 col-lg-4" data-category="embedded iot hardware">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon mb-3"><i class="bi bi-water"></i></div>
+            <h5 class="card-title">Smart Irrigation Controller</h5>
+            <p class="card-text small text-muted">Soil-moisture-based auto-watering with LoRaWAN telemetry and solar power.</p>
+            <div class="mb-2"><span class="badge badge-tech">ESP32</span> <span class="badge badge-tech">LoRa</span> <span class="badge badge-tech">FreeRTOS</span> <span class="badge badge-tech">KiCad</span></div>
+            <button class="btn btn-sm btn-ue" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Smart Irrigation Controller" data-detail="A solar-powered irrigation node that reads capacitive soil moisture sensors every 15 minutes and actuates a 12V solenoid valve. Uses LoRaWAN (The Things Network) for uplink to a cloud dashboard. Implements deep sleep for 6+ month battery life. PCB designed in KiCad with 4-layer stackup. Firmware in C on ESP32 with FreeRTOS tasks for sensing, comms, and watchdog. Capstone project advised by Dr. Mamlim." data-tags="Embedded, IoT, Hardware, LoRaWAN, FreeRTOS, KiCad">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="iot networks software">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon icon-teal mb-3"><i class="bi bi-house"></i></div>
+            <h5 class="card-title">Home Energy Monitor</h5>
+            <p class="card-text small text-muted">Non-invasive CT clamp sensors feeding per-circuit usage to MQTT + Grafana.</p>
+            <div class="mb-2"><span class="badge badge-tech">Raspberry Pi</span> <span class="badge badge-tech">MQTT</span> <span class="badge badge-tech">Grafana</span> <span class="badge badge-tech">Python</span></div>
+            <button class="btn btn-sm btn-ue" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Home Energy Monitor" data-detail="Split-phase household energy monitoring using 8 CT clamps on the main panel. ADC sampling at 2.4 kSPS per channel on an MCP3008 via SPI. Raspberry Pi 4 runs a Python collector publishing to MQTT (Mosquitto). Grafana dashboards show real-time power, daily kWh, cost estimates, and appliance detection via ML (separate service). Includes OTA firmware updates for the Pi. Competition entry — 2nd place UE CodeCpE 2024." data-tags="IoT, Networks, Software, MQTT, Grafana, Python, Energy">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="ai embedded robotics">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon mb-3"><i class="bi bi-eye"></i></div>
+            <h5 class="card-title">Vision-Guided Sorting Arm</h5>
+            <p class="card-text small text-muted">4-DOF robotic arm with camera sorting objects by color/shape using TensorRT.</p>
+            <div class="mb-2"><span class="badge badge-tech">Jetson Nano</span> <span class="badge badge-tech">TensorRT</span> <span class="badge badge-tech">ROS 2</span> <span class="badge badge-tech">OpenCV</span></div>
+            <button class="btn btn-sm btn-ue" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Vision-Guided Sorting Arm" data-detail="A 4-DOF desktop robotic arm (3D-printed, MG996R servos) with a USB camera mounted on the end-effector. Jetson Nano runs a YOLOv8n model (exported to ONNX, optimized with TensorRT) at 30 FPS for object detection. ROS 2 Humble coordinates perception, inverse kinematics (analytic solver), and trajectory planning. Sorting accuracy &gt;95% on 5 object classes. Capstone project co-advised by Engr. Delgado and Dr. Sironofre." data-tags="AI/ML, Robotics, Embedded, TensorRT, ROS 2, Computer Vision">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="networks security software">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon icon-teal mb-3"><i class="bi bi-shield-lock"></i></div>
+            <h5 class="card-title">Campus Network Anomaly Detector</h5>
+            <p class="card-text small text-muted">NetFlow/sFlow collector with ML-based anomaly detection and alerting.</p>
+            <div class="mb-2"><span class="badge badge-tech">Go</span> <span class="badge badge-tech">InfluxDB</span> <span class="badge badge-tech">Isolation Forest</span> <span class="badge badge-tech">Alertmanager</span></div>
+            <button class="btn btn-sm btn-ue" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Campus Network Anomaly Detector" data-detail="Collects NetFlow v9/IPFIX and sFlow from campus switches (Cisco, Arista). Go collector parses flows, enriches with GeoIP and ASN, writes to InfluxDB. Nightly training of Isolation Forest model on flow features (bytes, packets, duration, port entropy, ASN diversity). Real-time scoring flags anomalies; Alertmanager routes to Slack/Email/PagerDuty. Dashboard in Grafana with drill-down to raw flows. Research project with Engr. Santos." data-tags="Networks, Security, Software, Go, ML, InfluxDB, Grafana">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="embedded hardware">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon mb-3"><i class="bi bi-cpu"></i></div>
+            <h5 class="card-title">RISC-V Soft Core on FPGA</h5>
+            <p class="card-text small text-muted">Pipelined RV32IM core with cache, branch predictor, and AXI4 bus — verified in simulation.</p>
+            <div class="mb-2"><span class="badge badge-tech">Verilog</span> <span class="badge badge-tech">Vivado</span> <span class="badge badge-tech">RISC-V</span> <span class="badge badge-tech">SystemVerilog</span></div>
+            <button class="btn btn-sm btn-ue" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="RISC-V Soft Core on FPGA" data-detail="5-stage pipelined RV32IM (base integer + multiply/divide) implemented in SystemVerilog. Features: 2-bit saturating counter branch predictor, 4 KB direct-mapped I/D caches with write-back, AXI4-Lite peripheral bus, 2-cycle multiply, iterative divider. Verified with RISC-V compliance test suite (riscv-arch-test) and custom directed tests in UVM. Synthesized on Xilinx Artix-7 (XC7A100T) at 100 MHz. Final year project advised by Engr. Torres." data-tags="Hardware, FPGA, RISC-V, Verilog, SystemVerilog, Architecture">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="ai software data">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon icon-teal mb-3"><i class="bi bi-graph-up"></i></div>
+            <h5 class="card-title">Predictive Maintenance for Motors</h5>
+            <p class="card-text small text-muted">Vibration + current signature analysis on edge gateway predicting bearing failure.</p>
+            <div class="mb-2"><span class="badge badge-tech">Python</span> <span class="badge badge-tech">scikit-learn</span> <span class="badge badge-tech">ONNX</span> <span class="badge badge-tech">Edge Impulse</span></div>
+            <button class="btn btn-sm btn-ue" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Predictive Maintenance for Motors" data-detail="Industrial motor monitoring using 3-axis accelerometer (ADXL355) and hall-effect current sensor (ACS712) sampled at 10 kHz. Edge Impulse Studio used for data labeling, spectral feature extraction (FFT, envelope), and training a 1D CNN classifier (normal, inner race, outer race, ball defect). Model exported to ONNX, runs on STM32H7 via TensorRT-Lite. MQTT alerts to maintenance dashboard. SCPES workshop project sponsored by a local manufacturing plant." data-tags="AI/ML, Embedded, IoT, Predictive Maintenance, Edge Impulse, ONNX">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="robotics hardware embedded">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon mb-3"><i class="bi bi-robot"></i></div>
+            <h5 class="card-title">Autonomous Line-Follower (Speed Class)</h5>
+            <p class="card-text small text-muted">PID-tuned differential drive with 8-sensor array, 3 m/s top speed.</p>
+            <div class="mb-2"><span class="badge badge-tech">STM32F4</span> <span class="badge badge-tech">PID</span> <span class="badge badge-tech">KiCad</span> <span class="badge badge-tech">C</span></div>
+            <button class="btn btn-sm btn-ue" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Autonomous Line-Follower (Speed Class)" data-detail="Custom PCB (KiCad, 4-layer) with STM32F407, dual DRV8833 H-bridges, 8-channel QTR-8RC reflectance array, IMU (MPU6050) for tilt compensation. Firmware in C with CMSIS: cascaded PID (position → velocity → current), feedforward from curvature estimation, adaptive gain scheduling. Mechanical: carbon fiber chassis, 3D-printed sensor mount, 12V LiPo. Competed in National Instrumentation &amp; Control Conference — 1st place speed class. Advised by Engr. Delgado." data-tags="Robotics, Embedded, Hardware, PID, STM32, Competition">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="networks software cloud">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon icon-teal mb-3"><i class="bi bi-cloud"></i></div>
+            <h5 class="card-title">KubeEdge IoT Platform Demo</h5>
+            <p class="card-text small text-muted">Kubernetes at the edge: device twins, cloud-synced config, offline operation.</p>
+            <div class="mb-2"><span class="badge badge-tech">KubeEdge</span> <span class="badge badge-tech">K3s</span> <span class="badge badge-tech">Go</span> <span class="badge badge-tech">MQTT</span></div>
+            <button class="btn btn-sm btn-ue" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="KubeEdge IoT Platform Demo" data-detail="Cloud: K3s cluster on 3 VMs (control plane + workers). Edge: 5x Raspberry Pi 4 running KubeEdge edgecore. Device twins (CustomResourceDefinitions) represent 20 simulated sensors. Cloud-side operator reconciles desired config (sampling rate, thresholds) to edge via MQTT. Edge caches config locally for offline operation; syncs on reconnect. Demonstrated rolling updates, canary deployments, and node drain simulation. Workshop project for SCPES Cloud &amp; Edge series." data-tags="Networks, Cloud, Edge, Kubernetes, KubeEdge, Go, IoT">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="software ai">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon mb-3"><i class="bi bi-code-slash"></i></div>
+            <h5 class="card-title">TinyML Keyword Spotter</h5>
+            <p class="card-text small text-muted">"Hey CpE" wake word on Cortex-M4 — 20 KB model, &lt;5 mA average.</p>
+            <div class="mb-2"><span class="badge badge-tech">TensorFlow Lite Micro</span> <span class="badge badge-tech">C++</span> <span class="badge badge-tech">MFCC</span> <span class="badge badge-tech">ARM CMSIS-NN</span></div>
+            <button class="btn btn-sm btn-ue" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="TinyML Keyword Spotter" data-detail="Keyword spotting for 'Hey CpE' on STM32L4 (Cortex-M4F, 80 MHz). Audio pipeline: 16 kHz mono → 40-channel MFCC (13 coeffs, 30 ms windows) → DS-CNN (depthwise separable conv, ~18K params). Trained on Speech Commands v2 + custom recordings. Quantized to INT8, optimized with CMSIS-NN kernels. Inference latency 12 ms, RAM 8 KB, flash 24 KB. Average current 4.2 mA (including mic). Deployed on custom breakout board. SCPES TinyML workshop capstone." data-tags="AI/ML, Embedded, TinyML, TFLite Micro, CMSIS-NN, STM32">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="hardware fpga">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon icon-teal mb-3"><i class="bi bi-diagram-3"></i></div>
+            <h5 class="card-title">SDR FM Receiver on FPGA</h5>
+            <p class="card-text small text-muted">RTL-SDR frontend + FPGA digital down-conversion, audio out via PWM.</p>
+            <div class="mb-2"><span class="badge badge-tech">Verilog</span> <span class="badge badge-tech">RTL-SDR</span> <span class="badge badge-tech">CIC Filter</span> <span class="badge badge-tech">Vivado</span></div>
+            <button class="btn btn-sm btn-ue" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="SDR FM Receiver on FPGA" data-detail="RTL-SDR dongle (R820T2) provides 2.4 MS/s IQ samples via USB to a host PC running a C shim that forwards to FPGA over FTDI FT601 (SuperSpeed USB). FPGA (Artix-7) implements: CIC decimator (64×), FIR compensation filter, quadrature demodulator (CORDIC atan2), de-emphasis (75 µs), PWM audio output (12-bit, 48 kHz). Verified with live FM stations. Final project for Digital Signal Processing elective." data-tags="Hardware, FPGA, SDR, Verilog, DSP, RTL-SDR">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="iot networks software">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon mb-3"><i class="bi bi-wifi"></i></div>
+            <h5 class="card-title">Mesh Environmental Sensor Network</h5>
+            <p class="card-text small text-muted">ESP-MESH network of 15 nodes measuring temp/humidity/CO2 with root gateway.</p>
+            <div class="mb-2"><span class="badge badge-tech">ESP32</span> <span class="badge badge-tech">ESP-MESH</span> <span class="badge badge-tech">MQTT</span> <span class="badge badge-tech">InfluxDB</span></div>
+            <button class="btn btn-sm btn-ue" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Mesh Environmental Sensor Network" data-detail="15 battery-powered nodes (ESP32 + SHT31 + SCD41) deployed across a building floor. ESP-MESH self-forms multi-hop routing to a root node (ESP32 + Ethernet) which bridges to MQTT broker. Nodes sleep 5 min, wake, measure, route, sleep. Root aggregates and publishes to InfluxDB. Grafana shows floorplan heatmaps. Battery life ~8 months (2× AA LiFeS2). Auto-healing on node failure demonstrated. Capstone advised by Engr. Santos." data-tags="IoT, Networks, Embedded, ESP-MESH, MQTT, Grafana">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="software security">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon icon-teal mb-3"><i class="bi bi-terminal"></i></div>
+            <h5 class="card-title">eBPF Runtime Security Monitor</h5>
+            <p class="card-text small text-muted">Kernel-level syscall tracing for container escape detection — Falco-style rules.</p>
+            <div class="mb-2"><span class="badge badge-tech">eBPF</span> <span class="badge badge-tech">C</span> <span class="badge badge-tech">BCC</span> <span class="badge badge-tech">Kubernetes</span></div>
+            <button class="btn btn-sm btn-ue" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="eBPF Runtime Security Monitor" data-detail="eBPF programs attached to tracepoints: sys_enter_execve, sys_enter_openat, sys_enter_connect, security_bprm_check. Userspace Go agent loads BPF bytecode, maintains per-container state (PID namespace, cgroup), evaluates YARA-like rules (e.g., 'execve from /tmp in container', 'unexpected outbound connection'). Alerts via gRPC to central collector. Tested on kind cluster with Falco rule set subset. Research project with Engr. Cruz." data-tags="Security, Software, eBPF, Kubernetes, Go, Linux Kernel">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="ai robotics software">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon mb-3"><i class="bi bi-cpu"></i></div>
+            <h5 class="card-title">ROS 2 Nav2 Autonomous Delivery Bot</h5>
+            <p class="card-text small text-muted">SLAM + Nav2 stack on TurtleBot3 — waypoint following, obstacle avoidance, dock charging.</p>
+            <div class="mb-2"><span class="badge badge-tech">ROS 2</span> <span class="badge badge-tech">Nav2</span> <span class="badge badge-tech">SLAM Toolbox</span> <span class="badge badge-tech">Gazebo</span></div>
+            <button class="btn btn-sm btn-ue" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="ROS 2 Nav2 Autonomous Delivery Bot" data-detail="TurtleBot3 Burger (Raspberry Pi 4 + OpenCR) running ROS 2 Humble. SLAM Toolbox builds 2D occupancy grid from LiDAR (LDS-01). Nav2 stack: behavior tree (BT) navigator, DWB controller, SMAC planner, AMCL localization. Custom BT for: receive delivery goal → navigate → wait for confirm → return to dock → auto-charge. Simulated in Gazebo Harmony with dynamic obstacles. Deployed on hardware for CpE Week demo. Co-advised by Engr. Delgado and Engr. Cruz." data-tags="Robotics, AI/ML, Software, ROS 2, Nav2, SLAM, Simulation">View Details</button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="circuit-divider my-5" aria-hidden="true"></div>
+
+    <section>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <span class="eyebrow"><i class="bi bi-lightbulb"></i> Project ideas</span>
+          <h2>Stuck for a capstone topic?</h2>
+          <p class="lead-muted">Here are starter concepts — each can scale from a semester project to a full capstone:</p>
+          <div class="accordion accordion-flush mt-3" id="ideasAcc">
+            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#id1"><i class="bi bi-wifi me-1"></i> LoRaWAN asset tracker for campus equipment</button></h2><div id="id1" class="accordion-collapse collapse" data-bs-parent="#ideasAcc"><div class="accordion-body small">GPS + LoRa + BLE beaconing. Track laptops, tools, lab carts. Dashboard with geofence alerts.</div></div></div>
+            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#id2"><i class="bi bi-eye me-1"></i> Defect detection on PCB assembly line</button></h2><div id="id2" class="accordion-collapse collapse" data-bs-parent="#ideasAcc"><div class="accordion-body small">Camera + Jetson + YOLO. Detect missing components, solder bridges, wrong orientation. PLC integration for reject.</div></div></div>
+            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#id3"><i class="bi bi-shield-lock me-1"></i> Hardware root-of-trust for IoT devices</button></h2><div id="id3" class="accordion-collapse collapse" data-bs-parent="#ideasAcc"><div class="accordion-body small">Implement secure boot, key storage, and attestation on a RISC-V core with PUF. Formal verification of boot ROM.</div></div></div>
+            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#id4"><i class="bi bi-cloud me-1"></i> Edge ML pipeline for traffic cameras</button></h2><div id="id4" class="accordion-collapse collapse" data-bs-parent="#ideasAcc"><div class="accordion-body small">Count/classify vehicles at intersection. Model runs on edge box; aggregates to cloud for signal timing optimization.</div></div></div>
+            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#id5"><i class="bi bi-robot me-1"></i> Collaborative robot cell for electronics assembly</button></h2><div id="id5" class="accordion-collapse collapse" data-bs-parent="#ideasAcc"><div class="accordion-body small">UR5e + gripper + vision. Pick-and-place SMD components. Safety-rated monitored stop, force limiting.</div></div></div>
+            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#id6"><i class="bi bi-diagram-3 me-1"></i> Open-source RISC-V SoC with custom accelerator</button></h2><div id="id6" class="accordion-collapse collapse" data-bs-parent="#ideasAcc"><div class="accordion-body small">Extend VexRiscv or Ibex with a tensor accelerator. Verify with formal methods. Tape-out via Efabless/OpenMPW.</div></div></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card cpe-card h-100">
+            <div class="card-body">
+              <h5><i class="bi bi-trophy me-1"></i> Competition-ready tracks</h2>
+              <p class="small text-muted mb-3">Align your project with these annual contests:</p>
+              <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item bg-transparent px-0"><i class="bi bi-arrow-right text-success me-1"></i> <strong>Philippine Robotics Olympiad</strong> — line follow, sumo, humanoid, innovative</li>
+                <li class="list-group-item bg-transparent px-0"><i class="bi bi-arrow-right text-success me-1"></i> <strong>ICPC Asia Regional</strong> — algorithmic programming (teams of 3)</li>
+                <li class="list-group-item bg-transparent px-0"><i class="bi bi-arrow-right text-success me-1"></i> <strong>Hackathons</strong> — UE CodeCpE, DOST-SEI, IEEE, corporate (Intel, Analog Devices)</li>
+                <li class="list-group-item bg-transparent px-0"><i class="bi bi-arrow-right text-success me-1"></i> <strong>Chip Design</strong> — Efabless Open MPW Shuttle, Google LFP</li>
+                <li class="list-group-item bg-transparent px-0"><i class="bi bi-arrow-right text-success me-1"></i> <strong>Cybersecurity CTF</strong> — PWN, RE, Crypto, Hardware (IEEEXtreme, local)</li>
+                <li class="list-group-item bg-transparent px-0"><i class="bi bi-arrow-right text-success me-1"></i> <strong>Data Science</strong> — Kaggle, DOST-PCIEERD, Analytics Philippines</li>
+              </ul>
+              <a href="scpes.html" class="btn btn-sm btn-ue">SCPES can help you form a team</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="d-flex gap-2 mt-4 justify-content-center">
+      <a href="specializations.html" class="btn btn-ue">Map projects to specializations <i class="bi bi-arrow-right"></i></a>
+      <a href="contact.html" class="btn btn-outline-secondary">Propose a project</a>
+    </div>
+  </div>
+</main>
+
+<!-- Project Modal -->
+<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="projectModalLabel">Project Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3" data-modal-tags></div>
+        <p class="mb-0" data-modal-body></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer pt-5 pb-3 mt-2">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4"><div class="footer-heading mb-2">UE · Computer Engineering Portal</div><p class="small">An informational guide to Computer Engineering and the CpE community at the University of the East — built for prospective students, parents, and visitors.</p><p class="disclaimer">Student project. Not an official UE publication.</p></div>
+      <div class="col-md-4"><div class="footer-heading mb-2">Explore</div><div class="row small"><div class="col-6"><a href="index.html">Home</a><br><a href="about-cpe.html">What is CpE?</a><br><a href="cpe-ue.html">CpE at UE</a><br><a href="specializations.html">Specializations</a></div><div class="col-6"><a href="careers.html">Careers</a><br><a href="faculty.html">Faculty</a><br><a href="scpes.html">SCPES</a><br><a href="projects.html">Projects</a><br><a href="contact.html">FAQ &amp; Contact</a></div></div></div>
+      <div class="col-md-4"><div class="footer-heading mb-2">Official links</div><p class="small mb-1"><a href="https://www.ue.edu.ph" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right me-1"></i>University of the East</a></p><p class="small mb-1"><a href="https://www.ue.edu.ph/mla" target="_blank" rel="noopener">UE Manila</a> · <a href="https://www.ue.edu.ph/caloocan" target="_blank" rel="noopener">UE Caloocan</a></p><p class="small">For admissions and curriculum details, refer to official UE channels.</p></div>
+    </div>
+    <hr style="border-color:#2A3342">
+    <div class="d-flex flex-wrap justify-content-between small"><span>© <span data-year>2026</span> CpE Information Portal · Built with HTML, CSS, Bootstrap &amp; JS</span><span><a href="contact.html">Contact</a> · <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a></span></div>
+  </div>
+</footer>
+<button id="scrollTop" aria-label="Scroll to top">↑</button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

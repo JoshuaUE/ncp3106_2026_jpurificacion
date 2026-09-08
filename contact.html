@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ &amp; Contact | UE CpE Portal</title>
+<meta name="description" content="Frequently asked questions about the BS Computer Engineering program at UE, plus contact form for inquiries. Official links and department information.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="topbar-strip py-1 d-none d-md-block">
+  <div class="container d-flex justify-content-between">
+    <span><i class="bi bi-cpu me-1"></i> BS Computer Engineering — University of the East</span>
+    <span><a href="contact.html">FAQ &amp; Contact</a> <span class="mx-2">|</span> <a href="https://www.ue.edu.ph" target="_blank" rel="noopener">ue.edu.ph <i class="bi bi-box-arrow-up-right"></i></a></span>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg site-nav sticky-top" aria-label="Main navigation">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html"><span class="brand-badge">CpE</span> UE Computer Engineering</a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About CpE</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="about-cpe.html">What is CpE?</a></li>
+            <li><a class="dropdown-item" href="cpe-ue.html">CpE at UE</a></li>
+            <li><a class="dropdown-item" href="specializations.html">Specializations</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+        <li class="nav-item"><a class="nav-link" href="faculty.html">Faculty</a></li>
+        <li class="nav-item"><a class="nav-link" href="scpes.html">SCPES</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><button class="theme-toggle" data-theme-toggle type="button"><i class="bi bi-moon-stars"></i> Dark</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero py-5">
+  <div class="container py-2">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active text-white" aria-current="page">FAQ &amp; Contact</li>
+      </ol>
+    </nav>
+    <h1 class="display-6 fw-bold">FAQ &amp; Contact</h1>
+    <p class="lead mb-0" style="color:#EAD3D7">Quick answers to common questions, plus a direct line to the CpE department and SCPES.</p>
+  </div>
+</header>
+
+<main class="section-pad">
+  <div class="container">
+    <div class="alert alert-info d-flex gap-2 small" role="note">
+      <i class="bi bi-shield-check"></i>
+      <div><strong>Official source reminder:</strong> This portal is a <em>student-built informational guide</em>, not an official UE publication. For authoritative answers on admissions, curriculum, schedules, fees, and policies, always refer to <a href="https://www.ue.edu.ph" target="_blank" rel="noopener">ue.edu.ph</a> or contact the UE College of Engineering directly.</div>
+    </div>
+
+    <section class="mb-5">
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <span class="eyebrow"><i class="bi bi-question-circle"></i> Frequently Asked Questions</span>
+          <h2>Quick answers</h2>
+          <div class="accordion accordion-flush mt-3" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">What is the difference between Computer Engineering, Computer Science, and Electronics Engineering?</button></h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="small mb-2"><strong>Computer Engineering (CpE)</strong> sits at the intersection of hardware and software — you learn digital logic, computer architecture, embedded systems, firmware, and low-level software. You can design a processor <em>and</em> write the OS that runs on it.</p><p class="small mb-2"><strong>Computer Science (CS)</strong> focuses on algorithms, theory, software engineering, AI/ML, and large-scale systems. Less hardware, more abstraction.</p><p class="small mb-0"><strong>Electronics Engineering (ECE)</strong> covers broader electronics: analog/digital circuits, communications, signal processing, power, and control. CpE is a specialized subset focused on computing systems.</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">Is CpE mostly hardware or mostly software?</button></h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="small mb-0">It's genuinely both. Expect serious programming (C/C++, Python, data structures, OS, databases) <em>and</em> serious hardware (digital logic, microprocessors, electronics, PCB design). The ratio varies by elective track — you can lean embedded (more hardware) or systems software (more code) — but the core curriculum requires competence in both domains.</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">What are the admission requirements for BS CpE at UE?</button></h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="small mb-2">Admission requirements change by academic year and campus (Manila vs. Caloocan). Typically:</p><ul class="small mb-2 ps-3"><li>Senior High School graduate (STEM strand preferred)</li><li>UE College Admission Test (UECAT) or qualifying exam</li><li>Minimum grade requirements in Math, Science, English</li><li>Interview or portfolio review (varies by year)</li></ul><p class="small mb-0"><strong>Always check the current UE Admissions page</strong> for the official, up-to-date requirements, deadlines, and procedures.</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">Does UE CpE have a board exam? What is the passing rate?</button></h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="small mb-2">Yes. BS CpE graduates take the <strong>Computer Engineering Licensure Examination</strong> administered by the PRC (Professional Regulation Commission). It covers Mathematics, Electronics, Computer Engineering (hardware/software), and General Engineering &amp; Applied Sciences.</p><p class="small mb-0">UE's historical passing rates vary by year. The department runs dedicated review programs. For the latest official passing rates and topnotcher lists, check the <a href="https://www.prc.gov.ph" target="_blank" rel="noopener">PRC website</a> or the UE College of Engineering announcements.</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">What programming languages and tools will I learn?</button></h2>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="small mb-2">Core curriculum typically includes:</p><ul class="small mb-2 ps-3"><li><strong>C/C++</strong> — firmware, systems, embedded (primary)</li><li><strong>Python</strong> — scripting, data, ML, automation</li><li><strong>Verilog/VHDL</strong> — digital design, FPGA</li><li><strong>Assembly</strong> — architecture, reverse engineering</li><li><strong>Java/C#</strong> — OOP, applications (varies)</li></ul><p class="small mb-0">Tools: Git, Linux, GCC/Clang, CMake, VS Code, Quartus/Vivado, LTspice, Wireshark, oscilloscopes, logic analyzers. Electives add: Rust, Go, MATLAB, ROS 2, TensorFlow/PyTorch, Kubernetes.</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq6">Are there scholarships for CpE students?</button></h2>
+              <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="small mb-2">Yes, multiple sources:</p><ul class="small mb-2 ps-3"><li><strong>UE Scholarships</strong> — academic, athletic, cultural, leadership (check UE Scholarship Office)</li><li><strong>DOST-SEI</strong> — RA 7687, RA 10612, Merit (for STEM students)</li><li><strong>CHED Tulong Dunong</strong> — financial assistance for qualified students</li><li><strong>Industry scholarships</strong> — semiconductor, telco, and tech firms (often via SCPES/college linkages)</li><li><strong>Private foundations</strong> — various STEM-focused grants</li></ul><p class="small mb-0">Visit the UE Scholarship Office and monitor SCPES announcements for application windows.</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq7">What facilities and labs are available?</button></h2>
+              <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="small mb-2">Typical facilities (exact rooms/equipment vary by campus and semester):</p><ul class="small mb-2 ps-3"><li>Electronics &amp; Circuits Lab — oscilloscopes, function generators, power supplies, component stocks</li><li>Digital Logic &amp; Microprocessor Lab — FPGA boards (Xilinx/Intel), microcontroller trainers (ARM, PIC, AVR)</li><li>Computer &amp; Networking Lab — structured cabling, routers/switches, Linux servers, virtualization</li><li>Project/Maker Space — 3D printers, soldering stations, bench tools, component library</li><li>Research Lab — higher-end equipment for faculty-led projects (varies)</li></ul><p class="small mb-0">Ask for a lab tour during campus visits or SCPES open house events.</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq8">Can I shift to CpE from another program?</button></h2>
+              <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="small mb-2">Yes, shifting is possible subject to:</p><ul class="small mb-2 ps-3"><li>Availability of slots in the CpE program</li><li>Grade requirements (typically minimum GWA, no failing grades)</li><li>Completion of prerequisite courses (Calculus, Physics, Programming fundamentals)</li><li>Interview with the department chair or program adviser</li></ul><p class="small mb-0">Credited units are evaluated course-by-course. Consult the UE Registrar and the CpE Department for the current shifting policy and application timeline.</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq9">What is SCPES and how do I join?</button></h2>
+              <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="small mb-2">SCPES (Student Council of Computer Engineering Students) is the official student organization for BS CpE majors. It runs workshops, hackathons, competitions, industry talks, peer tutoring, and community events.</p><p class="small mb-0">All CpE students are automatically members. To get active: attend a General Assembly (monthly), join a committee (Tech, Events, Externals, etc.), or volunteer at an event. No fees, no interviews — just show up. See the <a href="scpes.html">SCPES page</a> for details.</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq10">Where can I find official curriculum, course descriptions, and schedules?</button></h2>
+              <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><p class="small mb-0">Official documents are maintained by the UE Registrar and the College of Engineering. Access them via:</p><ul class="small mb-0 ps-3"><li>UE Student Portal (LMS) — current syllabi, schedules, grades</li><li>College of Engineering Office — curriculum maps, prerequisite charts</li><li><a href="https://www.ue.edu.ph" target="_blank" rel="noopener">ue.edu.ph</a> — official announcements, downloadable forms</li></ul></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card cpe-card h-100 sticky-lg-top" style="top: 100px;">
+            <div class="card-body">
+              <h5><i class="bi bi-bookmark-check me-1"></i> Quick links</h5>
+              <div class="list-group list-group-flush">
+                <a href="https://www.ue.edu.ph/admissions" target="_blank" rel="noopener" class="list-group-item list-group-item-action bg-transparent px-0"><i class="bi bi-mortarboard me-2"></i>UE Admissions</a>
+                <a href="https://www.ue.edu.ph/registrar" target="_blank" rel="noopener" class="list-group-item list-group-item-action bg-transparent px-0"><i class="bi bi-journal-text me-2"></i>Registrar &amp; Records</a>
+                <a href="https://www.prc.gov.ph" target="_blank" rel="noopener" class="list-group-item list-group-item-action bg-transparent px-0"><i class="bi bi-award me-2"></i>PRC Board Exams</a>
+                <a href="https://www.dost.gov.ph" target="_blank" rel="noopener" class="list-group-item list-group-item-action bg-transparent px-0"><i class="bi bi-cash-stack me-2"></i>DOST Scholarships</a>
+                <a href="scpes.html" class="list-group-item list-group-item-action bg-transparent px-0"><i class="bi bi-people me-2"></i>SCPES Activities</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="circuit-divider my-5" aria-hidden="true"></div>
+
+    <section class="mb-5">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <span class="eyebrow"><i class="bi bi-envelope"></i> Send us a message</span>
+          <h2>Contact form</h2>
+          <p class="lead-muted">Questions not covered above? Reach out — we'll route your message to the right person.</p>
+          <form id="contactForm" class="mt-3 needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="name" name="name" required aria-required="true">
+                <div class="invalid-feedback">Please enter your name.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                <input type="email" class="form-control" id="email" name="email" required aria-required="true">
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+              <div class="col-12">
+                <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
+                <select class="form-select" id="subject" name="subject" required aria-required="true">
+                  <option value="" selected disabled>Choose a topic</option>
+                  <option value="admissions">Admissions &amp; Requirements</option>
+                  <option value="curriculum">Curriculum &amp; Courses</option>
+                  <option value="faculty">Faculty &amp; Advising</option>
+                  <option value="scpes">SCPES &amp; Student Life</option>
+                  <option value="projects">Projects &amp; Research</option>
+                  <option value="partnerships">Industry Partnerships</option>
+                  <option value="website">Website Feedback</option>
+                  <option value="other">Other</option>
+                </select>
+                <div class="invalid-feedback">Please select a subject.</div>
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+                <textarea class="form-control" id="message" name="message" rows="5" required aria-required="true" placeholder="Your question or message..."></textarea>
+                <div class="invalid-feedback">Please enter your message.</div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="privacy" name="privacy" required>
+                  <label class="form-check-label small" for="privacy">I understand this is a student-run portal and my message will be forwarded to the relevant student organizers or faculty advisers. For official UE matters, I will contact <a href="https://www.ue.edu.ph" target="_blank" rel="noopener">ue.edu.ph</a> directly.</label>
+                </div>
+                <div class="invalid-feedback">Please acknowledge the disclaimer.</div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-ue"><i class="bi bi-send me-1"></i> Send Message</button>
+              </div>
+            </div>
+            <div class="alert alert-success d-none mt-3" id="formSuccess" role="alert"><i class="bi bi-check-circle me-1"></i> Thanks! Your message has been sent. We'll get back to you soon.</div>
+          </form>
+        </div>
+        <div class="col-lg-6">
+          <span class="eyebrow"><i class="bi bi-geo-alt"></i> Department info</span>
+          <h2>Visit or write to us</h2>
+          <div class="card cpe-card h-100">
+            <div class="card-body">
+              <h5><i class="bi bi-building me-1"></i> University of the East — College of Engineering</h5>
+              <address class="small mb-3">
+                <strong>Manila Campus (Main)</strong><br>
+                2219 C.M. Recto Avenue, Sampaloc, Manila 1008<br>
+                <i class="bi bi-telephone me-1"></i> <a href="tel:+63287355471">(02) 8735-5471</a> local 248 (CoE)<br>
+                <i class="bi bi-envelope me-1"></i> <a href="mailto:coe@ue.edu.ph">coe@ue.edu.ph</a>
+              </address>
+              <address class="small mb-3">
+                <strong>Caloocan Campus</strong><br>
+                Samson Road, Caloocan City 1400<br>
+                <i class="bi bi-telephone me-1"></i> <a href="tel:+63283678221">(02) 8367-8221</a> local 248 (CoE)<br>
+                <i class="bi bi-envelope me-1"></i> <a href="mailto:coe.caloocan@ue.edu.ph">coe.caloocan@ue.edu.ph</a>
+              </address>
+              <hr>
+              <h5><i class="bi bi-clock me-1"></i> Office hours</h5>
+              <p class="small mb-2">Monday–Friday: 8:00 AM – 5:00 PM<br>Saturday: 8:00 AM – 12:00 NN (varies by semester)</p>
+              <h5><i class="bi bi-person-lines-fill me-1"></i> CpE Department contacts (illustrative)</h5>
+              <ul class="list-unstyled small mb-0">
+                <li><strong>Department Chair:</strong> Dr. Juan Mamlim — <a href="mailto:jmamlim@ue.edu.ph">jmamlim@ue.edu.ph</a></li>
+                <li><strong>Program Adviser:</strong> Engr. Eduardo Santos — <a href="mailto:esantos@ue.edu.ph">esantos@ue.edu.ph</a></li>
+                <li><strong>SCPES Adviser:</strong> Engr. Maria Sironofre — <a href="mailto:msironofre@ue.edu.ph">msironofre@ue.edu.ph</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <span class="eyebrow"><i class="bi bi-link-45deg"></i> Official UE channels</span>
+          <h2>Always verify here first</h2>
+          <div class="list-group list-group-flush">
+            <a href="https://www.ue.edu.ph" target="_blank" rel="noopener" class="list-group-item list-group-item-action bg-transparent px-0 d-flex align-items-start gap-3"><i class="bi bi-globe text-primary fs-4"></i><div><strong>University of the East — Official Website</strong><br><small class="text-muted">Admissions, news, announcements, portals</small></div></a>
+            <a href="https://www.ue.edu.ph/mla" target="_blank" rel="noopener" class="list-group-item list-group-item-action bg-transparent px-0 d-flex align-items-start gap-3"><i class="bi bi-building text-success fs-4"></i><div><strong>UE Manila Campus</strong><br><small class="text-muted">Campus-specific programs, facilities, contacts</small></div></a>
+            <a href="https://www.ue.edu.ph/caloocan" target="_blank" rel="noopener" class="list-group-item list-group-item-action bg-transparent px-0 d-flex align-items-start gap-3"><i class="bi bi-building text-info fs-4"></i><div><strong>UE Caloocan Campus</strong><br><small class="text-muted">Campus-specific programs, facilities, contacts</small></div></a>
+            <a href="https://www.facebook.com/UEManilaOfficial" target="_blank" rel="noopener" class="list-group-item list-group-item-action bg-transparent px-0 d-flex align-items-start gap-3"><i class="bi bi-facebook text-primary fs-4"></i><div><strong>UE Manila Official Facebook</strong><br><small class="text-muted">Real-time announcements, events, advisories</small></div></a>
+            <a href="https://www.facebook.com/UECaloocanOfficial" target="_blank" rel="noopener" class="list-group-item list-group-item-action bg-transparent px-0 d-flex align-items-start gap-3"><i class="bi bi-facebook text-primary fs-4"></i><div><strong>UE Caloocan Official Facebook</strong><br><small class="text-muted">Campus updates, student affairs, enrollment</small></div></a>
+            <a href="https://www.prc.gov.ph" target="_blank" rel="noopener" class="list-group-item list-group-item-action bg-transparent px-0 d-flex align-items-start gap-3"><i class="bi bi-shield-check text-danger fs-4"></i><div><strong>Professional Regulation Commission (PRC)</strong><br><small class="text-muted">Board exam schedules, results, verification</small></div></a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card cpe-card h-100">
+            <div class="card-body">
+              <h5><i class="bi bi-lightbulb me-1"></i> Before you ask...</h5>
+              <p class="small text-muted mb-3">Save time by checking these first:</p>
+              <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item bg-transparent px-0"><i class="bi bi-check text-success me-2"></i> <strong>Admissions deadlines</strong> — posted on <a href="https://www.ue.edu.ph/admissions" target="_blank" rel="noopener">ue.edu.ph/admissions</a> months in advance</li>
+                <li class="list-group-item bg-transparent px-0"><i class="bi bi-check text-success me-2"></i> <strong>Enrollment schedules</strong> — UE Student Portal &gt; Announcements</li>
+                <li class="list-group-item bg-transparent px-0"><i class="bi bi-check text-success me-2"></i> <strong>Curriculum updates</strong> — College of Engineering Office or your program adviser</li>
+                <li class="list-group-item bg-transparent px-0"><i class="bi bi-check text-success me-2"></i> <strong>Scholarship applications</strong> — UE Scholarship Office + DOST-SEI website</li>
+                <li class="list-group-item bg-transparent px-0"><i class="bi bi-check text-success me-2"></i> <strong>Board exam requirements</strong> — PRC website &gt; Examination &gt; Computer Engineering</li>
+              </ul>
+              <p class="small mb-0">If your question isn't answered above, use the form on the left or email the department directly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer pt-5 pb-3 mt-2">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4"><div class="footer-heading mb-2">UE · Computer Engineering Portal</div><p class="small">An informational guide to Computer Engineering and the CpE community at the University of the East — built for prospective students, parents, and visitors.</p><p class="disclaimer">Student project. Not an official UE publication.</p></div>
+      <div class="col-md-4"><div class="footer-heading mb-2">Explore</div><div class="row small"><div class="col-6"><a href="index.html">Home</a><br><a href="about-cpe.html">What is CpE?</a><br><a href="cpe-ue.html">CpE at UE</a><br><a href="specializations.html">Specializations</a></div><div class="col-6"><a href="careers.html">Careers</a><br><a href="faculty.html">Faculty</a><br><a href="scpes.html">SCPES</a><br><a href="projects.html">Projects</a><br><a href="contact.html">FAQ &amp; Contact</a></div></div></div>
+      <div class="col-md-4"><div class="footer-heading mb-2">Official links</div><p class="small mb-1"><a href="https://www.ue.edu.ph" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right me-1"></i>University of the East</a></p><p class="small mb-1"><a href="https://www.ue.edu.ph/mla" target="_blank" rel="noopener">UE Manila</a> · <a href="https://www.ue.edu.ph/caloocan" target="_blank" rel="noopener">UE Caloocan</a></p><p class="small">For admissions and curriculum details, refer to official UE channels.</p></div>
+    </div>
+    <hr style="border-color:#2A3342">
+    <div class="d-flex flex-wrap justify-content-between small"><span>© <span data-year>2026</span> CpE Information Portal · Built with HTML, CSS, Bootstrap &amp; JS</span><span><a href="contact.html">Contact</a> · <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a></span></div>
+  </div>
+</footer>
+<button id="scrollTop" aria-label="Scroll to top">↑</button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

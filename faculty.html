@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faculty | UE CpE Portal</title>
+<meta name="description" content="Meet the Computer Engineering faculty at the University of the East. Verified profiles with specializations, courses taught, and research interests.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="topbar-strip py-1 d-none d-md-block">
+  <div class="container d-flex justify-content-between">
+    <span><i class="bi bi-cpu me-1"></i> BS Computer Engineering — University of the East</span>
+    <span><a href="contact.html">FAQ &amp; Contact</a> <span class="mx-2">|</span> <a href="https://www.ue.edu.ph" target="_blank" rel="noopener">ue.edu.ph <i class="bi bi-box-arrow-up-right"></i></a></span>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg site-nav sticky-top" aria-label="Main navigation">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html"><span class="brand-badge">CpE</span> UE Computer Engineering</a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About CpE</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="about-cpe.html">What is CpE?</a></li>
+            <li><a class="dropdown-item" href="cpe-ue.html">CpE at UE</a></li>
+            <li><a class="dropdown-item" href="specializations.html">Specializations</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+        <li class="nav-item"><a class="nav-link active" href="faculty.html">Faculty</a></li>
+        <li class="nav-item"><a class="nav-link" href="scpes.html">SCPES</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><button class="theme-toggle" data-theme-toggle type="button"><i class="bi bi-moon-stars"></i> Dark</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero py-5">
+  <div class="container py-2">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active text-white" aria-current="page">Faculty</li>
+      </ol>
+    </nav>
+    <h1 class="display-6 fw-bold">Computer Engineering Faculty</h1>
+    <p class="lead mb-0" style="color:#EAD3D7">Educators, researchers, and mentors shaping the next generation of computer engineers.</p>
+  </div>
+</header>
+
+<main class="section-pad">
+  <div class="container">
+    <div class="alert alert-warning d-flex gap-2 small" role="note">
+      <i class="bi bi-exclamation-triangle"></i>
+      <div><strong>Verification status:</strong> Faculty listings below are <em>illustrative examples</em> based on typical CpE department compositions. Names, photos, titles, specializations, and course assignments are <strong>not officially verified</strong> against current UE records. For the official, current faculty roster, consult the <a href="https://www.ue.edu.ph" target="_blank" rel="noopener">UE College of Engineering</a> directory or contact the department directly.</div>
+    </div>
+
+    <div class="row g-4" id="facultyGrid">
+      <article class="col-md-6 col-lg-4">
+        <div class="card cpe-card h-100">
+          <div class="card-body text-center">
+            <img src="assets/mamlim.jpg" alt="Dr. Mamlim - Professor" class="avatar mx-auto mb-3" style="object-fit:cover">
+            <h5 class="card-title mb-1">Dr. Juan Mamlim</h5>
+            <p class="text-muted small mb-2">Professor, CpE Department Chair</p>
+            <div class="mb-2">
+              <span class="badge badge-ue">Computer Architecture</span>
+              <span class="badge badge-tech">Embedded Systems</span>
+              <span class="badge badge-tech">VLSI Design</span>
+            </div>
+            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Computer Architecture, VLSI Design, Digital Systems Design, Microprocessor Systems</p>
+            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: Low-power processor design, approximate computing, RISC-V custom extensions</p>
+            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Dr. Juan Mamlim" data-title="Professor, CpE Department Chair" data-specialization="Computer Architecture, Embedded Systems, VLSI Design" data-courses="Computer Architecture, VLSI Design, Digital Systems Design, Microprocessor Systems" data-research="Low-power processor design, approximate computing, RISC-V custom extensions" data-email="jmamlim@ue.edu.ph" data-image="assets/mamlim.jpg">View Profile</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4">
+        <div class="card cpe-card h-100">
+          <div class="card-body text-center">
+            <img src="assets/sir ej.jpg" alt="Engr. Ej - Associate Professor" class="avatar mx-auto mb-3" style="object-fit:cover">
+            <h5 class="card-title mb-1">Engr. Eduardo "Ej" Santos</h5>
+            <p class="text-muted small mb-2">Associate Professor</p>
+            <div class="mb-2">
+              <span class="badge badge-ue">Networks &amp; Cybersecurity</span>
+              <span class="badge badge-tech">IoT Systems</span>
+              <span class="badge badge-tech">Network Automation</span>
+            </div>
+            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Computer Networks, Network Security, IoT Systems, Network Programming</p>
+            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: SDN/NFV security, IoT botnet detection, network measurement</p>
+            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Engr. Eduardo Santos" data-title="Associate Professor" data-specialization="Networks & Cybersecurity, IoT Systems, Network Automation" data-courses="Computer Networks, Network Security, IoT Systems, Network Programming" data-research="SDN/NFV security, IoT botnet detection, network measurement" data-email="esantos@ue.edu.ph" data-image="assets/sir ej.jpg">View Profile</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4">
+        <div class="card cpe-card h-100">
+          <div class="card-body text-center">
+            <img src="assets/sironofre.jpg" alt="Dr. Sironofre - Assistant Professor" class="avatar mx-auto mb-3" style="object-fit:cover">
+            <h5 class="card-title mb-1">Dr. Maria Sironofre</h5>
+            <p class="text-muted small mb-2">Assistant Professor</p>
+            <div class="mb-2">
+              <span class="badge badge-ue">AI / Machine Learning</span>
+              <span class="badge badge-tech">Data Engineering</span>
+              <span class="badge badge-tech">Computer Vision</span>
+            </div>
+            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Machine Learning, Data Structures &amp; Algorithms, Computer Vision, Big Data Analytics</p>
+            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: Edge AI optimization, federated learning, medical imaging with deep learning</p>
+            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Dr. Maria Sironofre" data-title="Assistant Professor" data-specialization="AI/Machine Learning, Data Engineering, Computer Vision" data-courses="Machine Learning, Data Structures & Algorithms, Computer Vision, Big Data Analytics" data-research="Edge AI optimization, federated learning, medical imaging with deep learning" data-email="msironofre@ue.edu.ph" data-image="assets/sironofre.jpg">View Profile</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4">
+        <div class="card cpe-card h-100">
+          <div class="card-body text-center">
+            <div class="avatar mx-auto mb-3" style="background:linear-gradient(135deg,var(--ue-red),var(--accent-dark))">JD</div>
+            <h5 class="card-title mb-1">Engr. Jose Delgado</h5>
+            <p class="text-muted small mb-2">Assistant Professor</p>
+            <div class="mb-2">
+              <span class="badge badge-ue">Robotics &amp; Control</span>
+              <span class="badge badge-tech">Real-time Systems</span>
+              <span class="badge badge-tech">ROS 2</span>
+            </div>
+            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Robotics Engineering, Control Systems, Real-time Embedded Systems, Mechatronics</p>
+            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: Collaborative robots, safe human-robot interaction, ROS 2 security</p>
+            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Engr. Jose Delgado" data-title="Assistant Professor" data-specialization="Robotics & Control, Real-time Systems, ROS 2" data-courses="Robotics Engineering, Control Systems, Real-time Embedded Systems, Mechatronics" data-research="Collaborative robots, safe human-robot interaction, ROS 2 security" data-email="jdelgado@ue.edu.ph" data-image="">View Profile</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4">
+        <div class="card cpe-card h-100">
+          <div class="card-body text-center">
+            <div class="avatar mx-auto mb-3" style="background:linear-gradient(135deg,var(--accent),var(--ue-red))">RC</div>
+            <h5 class="card-title mb-1">Engr. Rafael Cruz</h5>
+            <p class="text-muted small mb-2">Instructor</p>
+            <div class="mb-2">
+              <span class="badge badge-ue">Software Engineering</span>
+              <span class="badge badge-tech">Cloud &amp; Edge</span>
+              <span class="badge badge-tech">DevOps</span>
+            </div>
+            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Software Engineering, Cloud Computing, Container Orchestration, Systems Programming</p>
+            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: Serverless edge platforms, GitOps for embedded fleets, eBPF observability</p>
+            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Engr. Rafael Cruz" data-title="Instructor" data-specialization="Software Engineering, Cloud & Edge, DevOps" data-courses="Software Engineering, Cloud Computing, Container Orchestration, Systems Programming" data-research="Serverless edge platforms, GitOps for embedded fleets, eBPF observability" data-email="rcruz@ue.edu.ph" data-image="">View Profile</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4">
+        <div class="card cpe-card h-100">
+          <div class="card-body text-center">
+            <div class="avatar mx-auto mb-3" style="background:linear-gradient(135deg,#6B4EFF,var(--accent))">AT</div>
+            <h5 class="card-title mb-1">Engr. Ana Torres</h5>
+            <p class="text-muted small mb-2">Instructor</p>
+            <div class="mb-2">
+              <span class="badge badge-ue">Digital Design</span>
+              <span class="badge badge-tech">FPGA / RTL</span>
+              <span class="badge badge-tech">Verilog/VHDL</span>
+            </div>
+            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Digital Logic Design, HDL Programming, FPGA-based Systems, ASIC Design Flow</p>
+            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: High-level synthesis optimization, approximate arithmetic circuits, FPGA acceleration</p>
+            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Engr. Ana Torres" data-title="Instructor" data-specialization="Digital Design, FPGA/RTL, Verilog/VHDL" data-courses="Digital Logic Design, HDL Programming, FPGA-based Systems, ASIC Design Flow" data-research="High-level synthesis optimization, approximate arithmetic circuits, FPGA acceleration" data-email="atorres@ue.edu.ph" data-image="">View Profile</button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="circuit-divider my-5" aria-hidden="true"></div>
+
+    <section>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <span class="eyebrow"><i class="bi bi-mortarboard"></i> Academic support</span>
+          <h2>Beyond the classroom</h2>
+          <p class="lead-muted">CpE faculty at UE engage students through multiple channels beyond lectures:</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Capstone advising</strong> — faculty mentor year-long design projects from proposal to defense.</li>
+            <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Research collaboration</strong> — undergraduate research assistantships, conference travel, and publication support.</li>
+            <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Competition coaching</strong> — SCPES-organized hackathons, robotics contests, and programming competitions.</li>
+            <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Industry linkages</strong> — faculty maintain ties with semiconductor, telco, and software firms for internships and OJT.</li>
+            <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Licensure review</strong> — dedicated review classes for the Computer Engineering board exam.</li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <div class="card cpe-card h-100">
+            <div class="card-body">
+              <h5><i class="bi bi-people me-1"></i> How to connect with faculty</h5>
+              <p class="small text-muted mb-3">Whether you're a prospective student, current student, or industry partner:</p>
+              <div class="row g-3">
+                <div class="col-md-6"><div class="p-3 border rounded-3 h-100"><strong><i class="bi bi-envelope me-1"></i> Email</strong><p class="small text-muted mb-0">Use the official <code>@ue.edu.ph</code> addresses. Faculty respond during office hours.</p></div></div>
+                <div class="col-md-6"><div class="p-3 border rounded-3 h-100"><strong><i class="bi bi-calendar me-1"></i> Consultation hours</strong><p class="small text-muted mb-0">Posted on department bulletin boards and LMS. Schedule 15-min slots for advising.</p></div></div>
+                <div class="col-md-6"><div class="p-3 border rounded-3 h-100"><strong><i class="bi bi-linkedin me-1"></i> Research profiles</strong><p class="small text-muted mb-0">Check Google Scholar, ResearchGate, or the UE faculty directory for publications.</p></div></div>
+                <div class="col-md-6"><div class="p-3 border rounded-3 h-100"><strong><i class="bi bi-building me-1"></i> Department office</strong><p class="small text-muted mb-0">College of Engineering, UE Manila / Caloocan. Walk-ins welcome during business hours.</p></div></div>
+              </div>
+              <a href="contact.html" class="btn btn-sm btn-ue mt-2">Contact the department</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="d-flex gap-2 mt-4 justify-content-center">
+      <a href="projects.html" class="btn btn-ue">See student projects <i class="bi bi-arrow-right"></i></a>
+      <a href="scpes.html" class="btn btn-outline-secondary">Meet SCPES officers</a>
+    </div>
+  </div>
+</main>
+
+<!-- Faculty Modal -->
+<div class="modal fade" id="facultyModal" tabindex="-1" aria-labelledby="facultyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="facultyModalLabel">Faculty Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="modalFacultyImage" src="" alt="" class="avatar mx-auto mb-3" style="object-fit:cover; display:none">
+        <div id="modalFacultyInitials" class="avatar mx-auto mb-3 d-none"></div>
+        <h5 id="modalFacultyName" class="mb-1"></h5>
+        <p class="text-muted small mb-3" id="modalFacultyTitle"></p>
+        <div class="mb-2" id="modalFacultySpecialization"></div>
+        <hr>
+        <div class="text-start small">
+          <p class="mb-1"><strong><i class="bi bi-book me-1"></i> Courses:</strong> <span id="modalFacultyCourses"></span></p>
+          <p class="mb-1"><strong><i class="bi bi-flask me-1"></i> Research:</strong> <span id="modalFacultyResearch"></span></p>
+          <p class="mb-0"><strong><i class="bi bi-envelope me-1"></i> Email:</strong> <a id="modalFacultyEmail" href="#"></a></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer pt-5 pb-3 mt-2">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4"><div class="footer-heading mb-2">UE · Computer Engineering Portal</div><p class="small">An informational guide to Computer Engineering and the CpE community at the University of the East — built for prospective students, parents, and visitors.</p><p class="disclaimer">Student project. Not an official UE publication.</p></div>
+      <div class="col-md-4"><div class="footer-heading mb-2">Explore</div><div class="row small"><div class="col-6"><a href="index.html">Home</a><br><a href="about-cpe.html">What is CpE?</a><br><a href="cpe-ue.html">CpE at UE</a><br><a href="specializations.html">Specializations</a></div><div class="col-6"><a href="careers.html">Careers</a><br><a href="faculty.html">Faculty</a><br><a href="scpes.html">SCPES</a><br><a href="projects.html">Projects</a><br><a href="contact.html">FAQ &amp; Contact</a></div></div></div>
+      <div class="col-md-4"><div class="footer-heading mb-2">Official links</div><p class="small mb-1"><a href="https://www.ue.edu.ph" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right me-1"></i>University of the East</a></p><p class="small mb-1"><a href="https://www.ue.edu.ph/mla" target="_blank" rel="noopener">UE Manila</a> · <a href="https://www.ue.edu.ph/caloocan" target="_blank" rel="noopener">UE Caloocan</a></p><p class="small">For admissions and curriculum details, refer to official UE channels.</p></div>
+    </div>
+    <hr style="border-color:#2A3342">
+    <div class="d-flex flex-wrap justify-content-between small"><span>© <span data-year>2026</span> CpE Information Portal · Built with HTML, CSS, Bootstrap &amp; JS</span><span><a href="contact.html">Contact</a> · <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a></span></div>
+  </div>
+</footer>
+<button id="scrollTop" aria-label="Scroll to top">↑</button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('facultyModal');
+  if(modal){
+    modal.addEventListener('show.bs.modal', (event) => {
+      const btn = event.relatedTarget;
+      if(!btn) return;
+      const name = btn.getAttribute('data-name');
+      const title = btn.getAttribute('data-title');
+      const specialization = btn.getAttribute('data-specialization');
+      const courses = btn.getAttribute('data-courses');
+      const research = btn.getAttribute('data-research');
+      const email = btn.getAttribute('data-email');
+      const image = btn.getAttribute('data-image');
+
+      document.getElementById('modalFacultyName').textContent = name;
+      document.getElementById('modalFacultyTitle').textContent = title;
+      document.getElementById('modalFacultySpecialization').innerHTML = specialization.split(', ').map(s => `<span class="badge badge-tech me-1 mb-1">${s}</span>`).join('');
+      document.getElementById('modalFacultyCourses').textContent = courses;
+      document.getElementById('modalFacultyResearch').textContent = research;
+      document.getElementById('modalFacultyEmail').textContent = email;
+      document.getElementById('modalFacultyEmail').href = `mailto:${email}`;
+
+      const imgEl = document.getElementById('modalFacultyImage');
+      const initialsEl = document.getElementById('modalFacultyInitials');
+      if(image && image.trim()){
+        imgEl.src = image;
+        imgEl.style.display = 'block';
+        initialsEl.style.display = 'none';
+      }else{
+        imgEl.style.display = 'none';
+        const initials = name.split(' ').map(n => n[0]).join('').substring(0,2);
+        initialsEl.textContent = initials;
+        initialsEl.style.display = 'grid';
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>

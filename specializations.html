@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Specializations in Computer Engineering | UE CpE Portal</title>
+<meta name="description" content="Explore the major specialization tracks in Computer Engineering: Embedded Systems, IoT, Networks, Cybersecurity, AI/ML, Data Engineering, Robotics, Hardware Architecture, and Cloud/Edge computing.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="topbar-strip py-1 d-none d-md-block">
+  <div class="container d-flex justify-content-between">
+    <span><i class="bi bi-cpu me-1"></i> BS Computer Engineering — University of the East</span>
+    <span><a href="contact.html">FAQ &amp; Contact</a> <span class="mx-2">|</span> <a href="https://www.ue.edu.ph" target="_blank" rel="noopener">ue.edu.ph <i class="bi bi-box-arrow-up-right"></i></a></span>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg site-nav sticky-top" aria-label="Main navigation">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html"><span class="brand-badge">CpE</span> UE Computer Engineering</a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About CpE</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="about-cpe.html">What is CpE?</a></li>
+            <li><a class="dropdown-item" href="cpe-ue.html">CpE at UE</a></li>
+            <li><a class="dropdown-item active" href="specializations.html">Specializations</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+        <li class="nav-item"><a class="nav-link" href="faculty.html">Faculty</a></li>
+        <li class="nav-item"><a class="nav-link" href="scpes.html">SCPES</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><button class="theme-toggle" data-theme-toggle type="button"><i class="bi bi-moon-stars"></i> Dark</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero py-5">
+  <div class="container py-2">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active text-white" aria-current="page">Specializations</li>
+      </ol>
+    </nav>
+    <h1 class="display-6 fw-bold">Specialization Tracks in Computer Engineering</h1>
+    <p class="lead mb-0" style="color:#EAD3D7">Nine focus areas — pick a path, build deep expertise, and keep your options open.</p>
+  </div>
+</header>
+
+<main class="section-pad">
+  <div class="container">
+    <div class="alert alert-info d-flex gap-2 small" role="note">
+      <i class="bi bi-shield-check"></i>
+      <div><strong>Note:</strong> These tracks reflect the <em>typical breadth</em> of a BS CpE program (Philippine CHED-aligned). Specific electives, lab offerings, and research directions vary by campus and semester. Confirm current options with the College of Engineering.</div>
+    </div>
+
+    <div class="mb-4" data-filter-group="#specGrid" data-count="#specCount">
+      <div class="d-flex flex-wrap gap-2" role="group" aria-label="Filter specializations">
+        <button class="filter-pill active" data-filter="all" type="button">All</button>
+        <button class="filter-pill" data-filter="hardware" type="button">Hardware-centric</button>
+        <button class="filter-pill" data-filter="software" type="button">Software-centric</button>
+        <button class="filter-pill" data-filter="systems" type="button">Systems &amp; Networks</button>
+        <button class="filter-pill" data-filter="emerging" type="button">Emerging Tech</button>
+      </div>
+      <div class="mt-2 small text-muted"><span id="specCount">9</span> specializations shown</div>
+    </div>
+
+    <div class="row g-4" id="specGrid">
+      <article class="col-md-6 col-lg-4" data-category="hardware systems">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon mb-3"><i class="bi bi-motherboard"></i></div>
+            <h5 class="card-title">Embedded Systems</h5>
+            <p class="card-text small text-muted">Design firmware for microcontrollers and SoCs that run under tight constraints of power, memory, and real-time deadlines.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><i class="bi bi-check text-success me-1"></i> RTOS, bare-metal C/C++</li>
+              <li><i class="bi bi-check text-success me-1"></i> Peripheral drivers (I²C, SPI, UART)</li>
+              <li><i class="bi bi-check text-success me-1"></i> Power management &amp; sleep modes</li>
+            </ul>
+            <div class="mb-2"><span class="badge badge-tech">C</span> <span class="badge badge-tech">FreeRTOS</span> <span class="badge badge-tech">ARM Cortex-M</span></div>
+            <p class="small"><strong>Career path:</strong> Firmware Engineer, Embedded Software Engineer, IoT Device Developer</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="hardware emerging">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon icon-teal mb-3"><i class="bi bi-wifi"></i></div>
+            <h5 class="card-title">Internet of Things (IoT)</h5>
+            <p class="card-text small text-muted">Connect sensors and actuators to networks — from smart-home nodes to industrial telemetry.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><i class="bi bi-check text-success me-1"></i> Wireless protocols (BLE, LoRa, Zigbee, Wi-Fi)</li>
+              <li><i class="bi bi-check text-success me-1"></i> Edge gateways &amp; MQTT/CoAP</li>
+              <li><i class="bi bi-check text-success me-1"></i> Sensor fusion &amp; data pipelines</li>
+            </ul>
+            <div class="mb-2"><span class="badge badge-tech">ESP32</span> <span class="badge badge-tech">MQTT</span> <span class="badge badge-tech">Node-RED</span></div>
+            <p class="small"><strong>Career path:</strong> IoT Solutions Architect, Embedded Connectivity Engineer, Smart Systems Integrator</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="systems networks">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon mb-3"><i class="bi bi-hdd-network"></i></div>
+            <h5 class="card-title">Computer Networks</h5>
+            <p class="card-text small text-muted">Design, configure, and troubleshoot the infrastructure that moves data — LAN/WAN, data centers, and carrier networks.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><i class="bi bi-check text-success me-1"></i> Routing, switching, VLANs, VPNs</li>
+              <li><i class="bi bi-check text-success me-1"></i> TCP/IP, BGP, MPLS, QoS</li>
+              <li><i class="bi bi-check text-success me-1"></i> Network automation (Ansible, NetBox)</li>
+            </ul>
+            <div class="mb-2"><span class="badge badge-tech">Cisco</span> <span class="badge badge-tech">Juniper</span> <span class="badge badge-tech">Linux</span></div>
+            <p class="small"><strong>Career path:</strong> Network Engineer, Systems Engineer, Network Automation Engineer</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="systems emerging">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon icon-teal mb-3"><i class="bi bi-shield-lock"></i></div>
+            <h5 class="card-title">Cybersecurity</h5>
+            <p class="card-text small text-muted">Protect hardware and software systems — from secure boot and side-channel analysis to network defense and incident response.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><i class="bi bi-check text-success me-1"></i> Secure firmware, TPM, HSM</li>
+              <li><i class="bi bi-check text-success me-1"></i> Network monitoring, IDS/IPS, SIEM</li>
+              <li><i class="bi bi-check text-success me-1"></i> Vulnerability assessment &amp; hardening</li>
+            </ul>
+            <div class="mb-2"><span class="badge badge-tech">Wireshark</span> <span class="badge badge-tech">Burp Suite</span> <span class="badge badge-tech">YARA</span></div>
+            <p class="small"><strong>Career path:</strong> Security Engineer, Embedded Security Researcher, SOC Analyst, Penetration Tester</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="software emerging">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon mb-3"><i class="bi bi-cpu"></i></div>
+            <h5 class="card-title">AI / Machine Learning</h5>
+            <p class="card-text small text-muted">Deploy ML models on edge devices, optimize inference for constrained hardware, and build hardware-aware training pipelines.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><i class="bi bi-check text-success me-1"></i> Model quantization, pruning, distillation</li>
+              <li><i class="bi bi-check text-success me-1"></i> TensorRT, TFLite, ONNX Runtime</li>
+              <li><i class="bi bi-check text-success me-1"></i> Computer vision &amp; sensor analytics</li>
+            </ul>
+            <div class="mb-2"><span class="badge badge-tech">Python</span> <span class="badge badge-tech">PyTorch</span> <span class="badge badge-tech">TensorRT</span></div>
+            <p class="small"><strong>Career path:</strong> ML Engineer (Edge), Computer Vision Engineer, AI Accelerator Engineer</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="software systems">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon icon-teal mb-3"><i class="bi bi-database"></i></div>
+            <h5 class="card-title">Data Engineering</h5>
+            <p class="card-text small text-muted">Build pipelines that ingest, transform, and serve high-volume sensor and system data for analytics and ML.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><i class="bi bi-check text-success me-1"></i> Streaming (Kafka, Flink), batch (Spark)</li>
+              <li><i class="bi bi-check text-success me-1"></i> Time-series DBs (InfluxDB, TimescaleDB)</li>
+              <li><i class="bi bi-check text-success me-1"></i> Data quality, schema evolution</li>
+            </ul>
+            <div class="mb-2"><span class="badge badge-tech">SQL</span> <span class="badge badge-tech">Kafka</span> <span class="badge badge-tech">Airflow</span></div>
+            <p class="small"><strong>Career path:</strong> Data Engineer, Platform Engineer, Streaming Systems Engineer</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="hardware systems emerging">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon mb-3"><i class="bi bi-robot"></i></div>
+            <h5 class="card-title">Robotics &amp; Control</h5>
+            <p class="card-text small text-muted">Integrate sensing, actuation, and real-time control — from mobile robots to industrial automation.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><i class="bi bi-check text-success me-1"></i> ROS 2, PID, state estimation</li>
+              <li><i class="bi bi-check text-success me-1"></i> Kinematics, path planning, SLAM</li>
+              <li><i class="bi bi-check text-success me-1"></i> Safety-critical real-time loops</li>
+            </ul>
+            <div class="mb-2"><span class="badge badge-tech">ROS 2</span> <span class="badge badge-tech">C++</span> <span class="badge badge-tech">Gazebo</span></div>
+            <p class="small"><strong>Career path:</strong> Robotics Software Engineer, Control Systems Engineer, Automation Engineer</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="hardware">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon icon-teal mb-3"><i class="bi bi-diagram-3"></i></div>
+            <h5 class="card-title">Computer Architecture</h5>
+            <p class="card-text small text-muted">Design and analyze processor microarchitecture, memory hierarchies, and accelerators for performance and efficiency.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><i class="bi bi-check text-success me-1"></i> Pipeline design, branch prediction, caches</li>
+              <li><i class="bi bi-check text-success me-1"></i> RISC-V, ARM, custom accelerators</li>
+              <li><i class="bi bi-check text-success me-1"></i> Hardware description (Verilog, Chisel)</li>
+            </ul>
+            <div class="mb-2"><span class="badge badge-tech">Verilog</span> <span class="badge badge-tech">RISC-V</span> <span class="badge badge-tech">gem5</span></div>
+            <p class="small"><strong>Career path:</strong> CPU Architect, RTL Design Engineer, Verification Engineer, Performance Engineer</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6 col-lg-4" data-category="systems emerging software">
+        <div class="card cpe-card h-100">
+          <div class="card-body">
+            <div class="card-icon mb-3"><i class="bi bi-cloud"></i></div>
+            <h5 class="card-title">Cloud &amp; Edge Computing</h5>
+            <p class="card-text small text-muted">Distribute workloads between cloud and edge — container orchestration, serverless, and low-latency offload.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><i class="bi bi-check text-success me-1"></i> Kubernetes, K3s, KubeEdge</li>
+              <li><i class="bi bi-check text-success me-1"></i> eBPF, service mesh, observability</li>
+              <li><i class="bi bi-check text-success me-1"></i> Edge AI inference, 5G MEC</li>
+            </ul>
+            <div class="mb-2"><span class="badge badge-tech">Kubernetes</span> <span class="badge badge-tech">Go</span> <span class="badge badge-tech">eBPF</span></div>
+            <p class="small"><strong>Career path:</strong> Platform Engineer, Cloud Infrastructure Engineer, Edge Computing Specialist</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="circuit-divider my-5" aria-hidden="true"></div>
+
+    <section>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <span class="eyebrow"><i class="bi bi-lightbulb"></i> Choosing a track</span>
+          <h2>You don't have to pick just one</h2>
+          <p class="lead-muted">Many CpE graduates work across boundaries. A firmware engineer who understands networking builds better IoT devices. A network engineer who knows ML can deploy anomaly detection on the wire. The core curriculum gives you the shared vocabulary; electives and projects let you go deep.</p>
+          <ul class="list-group list-group-flush mt-3">
+            <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> Start with a <strong>capstone project</strong> that spans two areas (e.g., embedded + ML).</li>
+            <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> Take <strong>one elective</strong> outside your comfort zone each semester.</li>
+            <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> Join <a href="scpes.html">SCPES</a> workshops — they often cross tracks.</li>
+            <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> Build a <a href="projects.html">portfolio</a> that shows breadth <em>and</em> depth.</li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <div class="card cpe-card h-100">
+            <div class="card-body">
+              <h5><i class="bi bi-compass me-1"></i> Quick self-assessment</h5>
+              <p class="small text-muted">Answer honestly — there are no wrong answers, only signals.</p>
+              <div class="accordion accordion-flush mt-3" id="selfAssess">
+                <div class="accordion-item">
+                  <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q1">Do you enjoy reading datasheets and writing register-level code?</button></h2>
+                  <div id="q1" class="accordion-collapse collapse" data-bs-parent="#selfAssess"><div class="accordion-body small">Look at <strong>Embedded Systems</strong>, <strong>IoT</strong>, <strong>Computer Architecture</strong>.</div></div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q2">Do you like configuring routers, debugging packet captures, and automating infra?</button></h2>
+                  <div id="q2" class="accordion-collapse collapse" data-bs-parent="#selfAssess"><div class="accordion-body small">Look at <strong>Computer Networks</strong>, <strong>Cybersecurity</strong>, <strong>Cloud &amp; Edge</strong>.</div></div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q3">Do you prefer training models, cleaning data, and optimizing inference?</button></h2>
+                  <div id="q3" class="accordion-collapse collapse" data-bs-parent="#selfAssess"><div class="accordion-body small">Look at <strong>AI/ML</strong>, <strong>Data Engineering</strong>, <strong>Cloud &amp; Edge</strong>.</div></div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q4">Do you want to make physical things move — robots, drones, actuators?</button></h2>
+                  <div id="q4" class="accordion-collapse collapse" data-bs-parent="#selfAssess"><div class="accordion-body small">Look at <strong>Robotics &amp; Control</strong>, <strong>Embedded Systems</strong>, <strong>IoT</strong>.</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="d-flex gap-2 mt-4 justify-content-center">
+      <a href="projects.html" class="btn btn-ue">See illustrative projects <i class="bi bi-arrow-right"></i></a>
+      <a href="careers.html" class="btn btn-outline-secondary">Explore career paths</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer pt-5 pb-3 mt-2">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4"><div class="footer-heading mb-2">UE · Computer Engineering Portal</div><p class="small">An informational guide to Computer Engineering and the CpE community at the University of the East — built for prospective students, parents, and visitors.</p><p class="disclaimer">Student project. Not an official UE publication.</p></div>
+      <div class="col-md-4"><div class="footer-heading mb-2">Explore</div><div class="row small"><div class="col-6"><a href="index.html">Home</a><br><a href="about-cpe.html">What is CpE?</a><br><a href="cpe-ue.html">CpE at UE</a><br><a href="specializations.html">Specializations</a></div><div class="col-6"><a href="careers.html">Careers</a><br><a href="faculty.html">Faculty</a><br><a href="scpes.html">SCPES</a><br><a href="projects.html">Projects</a><br><a href="contact.html">FAQ &amp; Contact</a></div></div></div>
+      <div class="col-md-4"><div class="footer-heading mb-2">Official links</div><p class="small mb-1"><a href="https://www.ue.edu.ph" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right me-1"></i>University of the East</a></p><p class="small mb-1"><a href="https://www.ue.edu.ph/mla" target="_blank" rel="noopener">UE Manila</a> · <a href="https://www.ue.edu.ph/caloocan" target="_blank" rel="noopener">UE Caloocan</a></p><p class="small">For admissions and curriculum details, refer to official UE channels.</p></div>
+    </div>
+    <hr style="border-color:#2A3342">
+    <div class="d-flex flex-wrap justify-content-between small"><span>© <span data-year>2026</span> CpE Information Portal · Built with HTML, CSS, Bootstrap &amp; JS</span><span><a href="contact.html">Contact</a> · <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a></span></div>
+  </div>
+</footer>
+<button id="scrollTop" aria-label="Scroll to top">↑</button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
