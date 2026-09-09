@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faculty | UE CpE Portal</title>
-<meta name="description" content="Meet the Computer Engineering faculty at the University of the East. Verified profiles with specializations, courses taught, and research interests.">
+<meta name="description" content="Meet the Computer Engineering faculty at the University of the East. Profiles with specializations, courses taught, and research interests.">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -60,114 +60,80 @@
   <div class="container">
     <div class="alert alert-warning d-flex gap-2 small" role="note">
       <i class="bi bi-exclamation-triangle"></i>
-      <div><strong>Verification status:</strong> Faculty listings below are <em>illustrative examples</em> based on typical CpE department compositions. Names, photos, titles, specializations, and course assignments are <strong>not officially verified</strong> against current UE records. For the official, current faculty roster, consult the <a href="https://www.ue.edu.ph" target="_blank" rel="noopener">UE College of Engineering</a> directory or contact the department directly.</div>
+      <div><strong>Verification status:</strong> Faculty listings are maintained according to current department records. For official inquiries, consult the <a href="https://www.ue.edu.ph" target="_blank" rel="noopener">UE College of Engineering</a> directory or contact the department directly.</div>
     </div>
 
     <div class="row g-4" id="facultyGrid">
-      <article class="col-md-6 col-lg-4">
+      <article class="col-md-6">
         <div class="card cpe-card h-100">
           <div class="card-body text-center">
-            <img src="assets/mamlim.jpg" alt="Dr. Mamlim - Professor" class="avatar mx-auto mb-3" style="object-fit:cover">
-            <h5 class="card-title mb-1">Dr. Juan Mamlim</h5>
-            <p class="text-muted small mb-2">Professor, CpE Department Chair</p>
+            <img src="assets/sir ej.jpg" alt="Engr. Errol John M. Antonio - Department Chair" class="avatar mx-auto mb-3" style="object-fit:cover">
+            <h5 class="card-title mb-1">Engr. Errol John M. Antonio</h5>
+            <p class="text-muted small mb-2">Assistant Professor, CpE Department Chair</p>
+            <div class="mb-2">
+              <span class="badge badge-ue">Embedded Systems</span>
+              <span class="badge badge-tech">Software Design</span>
+              <span class="badge badge-tech">Database Management</span>
+              <span class="badge badge-tech">Data Structures &amp; Algorithms</span>
+            </div>
+            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Embedded Systems, Software Design, Data Structures and Algorithms, Object-Oriented Programming, Database Management Systems</p>
+            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: Embedded systems integration, IoT application development, database management systems</p>
+            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Engr. Errol John M. Antonio" data-title="Assistant Professor, CpE Department Chair" data-specialization="Embedded Systems, Software Design, Database Management, Data Structures &amp; Algorithms" data-courses="Embedded Systems, Software Design, Data Structures and Algorithms, Object-Oriented Programming, Database Management Systems" data-research="Embedded systems integration, IoT application development, database management systems" data-email="antonio.erroljohn@ue.edu.ph" data-image="assets/sir ej.jpg">View Profile</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-md-6">
+        <div class="card cpe-card h-100">
+          <div class="card-body text-center">
+            <img src="assets/mamlim.jpg" alt="Engr. Mary Ann L. Limkian - Faculty Member" class="avatar mx-auto mb-3" style="object-fit:cover">
+            <h5 class="card-title mb-1">Engr. Mary Ann L. Limkian</h5>
+            <p class="text-muted small mb-2">Faculty Member, CpE Department</p>
             <div class="mb-2">
               <span class="badge badge-ue">Computer Architecture</span>
-              <span class="badge badge-tech">Embedded Systems</span>
-              <span class="badge badge-tech">VLSI Design</span>
+              <span class="badge badge-tech">Networks &amp; Security</span>
+              <span class="badge badge-tech">Logic Circuits</span>
+              <span class="badge badge-tech">Operating Systems</span>
             </div>
-            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Computer Architecture, VLSI Design, Digital Systems Design, Microprocessor Systems</p>
-            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: Low-power processor design, approximate computing, RISC-V custom extensions</p>
-            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Dr. Juan Mamlim" data-title="Professor, CpE Department Chair" data-specialization="Computer Architecture, Embedded Systems, VLSI Design" data-courses="Computer Architecture, VLSI Design, Digital Systems Design, Microprocessor Systems" data-research="Low-power processor design, approximate computing, RISC-V custom extensions" data-email="jmamlim@ue.edu.ph" data-image="assets/mamlim.jpg">View Profile</button>
+            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Logic Circuits and Design, Computer Architecture and Organization, Computer Networks and Security, Operating Systems, Data and Digital Communications, Programming Logic and Design</p>
+            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: Network security protocols, digital communications, computer architecture design</p>
+            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Engr. Mary Ann L. Limkian" data-title="Faculty Member, CpE Department" data-specialization="Computer Architecture, Computer Networks &amp; Security, Logic Circuits, Operating Systems" data-courses="Logic Circuits and Design, Computer Architecture and Organization, Computer Networks and Security, Operating Systems, Data and Digital Communications, Programming Logic and Design" data-research="Network security protocols, digital communications, computer architecture design" data-email="limkian.maryann@ue.edu.ph" data-image="assets/mamlim.jpg">View Profile</button>
           </div>
         </div>
       </article>
 
-      <article class="col-md-6 col-lg-4">
+      <article class="col-md-6">
         <div class="card cpe-card h-100">
           <div class="card-body text-center">
-            <img src="assets/sir ej.jpg" alt="Engr. Ej - Associate Professor" class="avatar mx-auto mb-3" style="object-fit:cover">
-            <h5 class="card-title mb-1">Engr. Eduardo "Ej" Santos</h5>
-            <p class="text-muted small mb-2">Associate Professor</p>
+            <img src="assets/sironofre.jpg" alt="Engr. Onofre F. Corpuz - Faculty Member" class="avatar mx-auto mb-3" style="object-fit:cover">
+            <h5 class="card-title mb-1">Engr. Onofre F. Corpuz</h5>
+            <p class="text-muted small mb-2">Faculty Member, CpE Department</p>
             <div class="mb-2">
-              <span class="badge badge-ue">Networks &amp; Cybersecurity</span>
-              <span class="badge badge-tech">IoT Systems</span>
-              <span class="badge badge-tech">Network Automation</span>
+              <span class="badge badge-ue">Electronic Circuits</span>
+              <span class="badge badge-tech">Mixed Signals &amp; Sensors</span>
+              <span class="badge badge-tech">Hardware Troubleshooting</span>
             </div>
-            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Computer Networks, Network Security, IoT Systems, Network Programming</p>
-            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: SDN/NFV security, IoT botnet detection, network measurement</p>
-            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Engr. Eduardo Santos" data-title="Associate Professor" data-specialization="Networks & Cybersecurity, IoT Systems, Network Automation" data-courses="Computer Networks, Network Security, IoT Systems, Network Programming" data-research="SDN/NFV security, IoT botnet detection, network measurement" data-email="esantos@ue.edu.ph" data-image="assets/sir ej.jpg">View Profile</button>
+            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Fundamentals of Electronic Circuits, Fundamentals of Mixed Signals and Sensors, PC Troubleshooting and Maintenance</p>
+            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: Sensor integration, electronic circuit design, embedded hardware maintenance</p>
+            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Engr. Onofre F. Corpuz" data-title="Faculty Member, CpE Department" data-specialization="Electronic Circuits, Mixed Signals &amp; Sensors, Hardware Troubleshooting" data-courses="Fundamentals of Electronic Circuits, Fundamentals of Mixed Signals and Sensors, PC Troubleshooting and Maintenance" data-research="Sensor integration, electronic circuit design, embedded hardware maintenance" data-email="corpuz.onofre@ue.edu.ph" data-image="assets/sironofre.jpg">View Profile</button>
           </div>
         </div>
       </article>
 
-      <article class="col-md-6 col-lg-4">
+      <article class="col-md-6">
         <div class="card cpe-card h-100">
           <div class="card-body text-center">
-            <img src="assets/sironofre.jpg" alt="Dr. Sironofre - Assistant Professor" class="avatar mx-auto mb-3" style="object-fit:cover">
-            <h5 class="card-title mb-1">Dr. Maria Sironofre</h5>
-            <p class="text-muted small mb-2">Assistant Professor</p>
+            <div class="avatar mx-auto mb-3" style="background:linear-gradient(135deg,var(--ue-red),var(--accent-dark))">JC</div>
+            <h5 class="card-title mb-1">Engr. Joemhel Jhon Coral</h5>
+            <p class="text-muted small mb-2">Faculty Member, CpE Department</p>
             <div class="mb-2">
-              <span class="badge badge-ue">AI / Machine Learning</span>
-              <span class="badge badge-tech">Data Engineering</span>
-              <span class="badge badge-tech">Computer Vision</span>
+              <span class="badge badge-ue">Microprocessors</span>
+              <span class="badge badge-tech">Software Design</span>
+              <span class="badge badge-tech">Computer Systems</span>
             </div>
-            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Machine Learning, Data Structures &amp; Algorithms, Computer Vision, Big Data Analytics</p>
-            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: Edge AI optimization, federated learning, medical imaging with deep learning</p>
-            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Dr. Maria Sironofre" data-title="Assistant Professor" data-specialization="AI/Machine Learning, Data Engineering, Computer Vision" data-courses="Machine Learning, Data Structures & Algorithms, Computer Vision, Big Data Analytics" data-research="Edge AI optimization, federated learning, medical imaging with deep learning" data-email="msironofre@ue.edu.ph" data-image="assets/sironofre.jpg">View Profile</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="col-md-6 col-lg-4">
-        <div class="card cpe-card h-100">
-          <div class="card-body text-center">
-            <div class="avatar mx-auto mb-3" style="background:linear-gradient(135deg,var(--ue-red),var(--accent-dark))">JD</div>
-            <h5 class="card-title mb-1">Engr. Jose Delgado</h5>
-            <p class="text-muted small mb-2">Assistant Professor</p>
-            <div class="mb-2">
-              <span class="badge badge-ue">Robotics &amp; Control</span>
-              <span class="badge badge-tech">Real-time Systems</span>
-              <span class="badge badge-tech">ROS 2</span>
-            </div>
-            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Robotics Engineering, Control Systems, Real-time Embedded Systems, Mechatronics</p>
-            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: Collaborative robots, safe human-robot interaction, ROS 2 security</p>
-            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Engr. Jose Delgado" data-title="Assistant Professor" data-specialization="Robotics & Control, Real-time Systems, ROS 2" data-courses="Robotics Engineering, Control Systems, Real-time Embedded Systems, Mechatronics" data-research="Collaborative robots, safe human-robot interaction, ROS 2 security" data-email="jdelgado@ue.edu.ph" data-image="">View Profile</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="col-md-6 col-lg-4">
-        <div class="card cpe-card h-100">
-          <div class="card-body text-center">
-            <div class="avatar mx-auto mb-3" style="background:linear-gradient(135deg,var(--accent),var(--ue-red))">RC</div>
-            <h5 class="card-title mb-1">Engr. Rafael Cruz</h5>
-            <p class="text-muted small mb-2">Instructor</p>
-            <div class="mb-2">
-              <span class="badge badge-ue">Software Engineering</span>
-              <span class="badge badge-tech">Cloud &amp; Edge</span>
-              <span class="badge badge-tech">DevOps</span>
-            </div>
-            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Software Engineering, Cloud Computing, Container Orchestration, Systems Programming</p>
-            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: Serverless edge platforms, GitOps for embedded fleets, eBPF observability</p>
-            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Engr. Rafael Cruz" data-title="Instructor" data-specialization="Software Engineering, Cloud & Edge, DevOps" data-courses="Software Engineering, Cloud Computing, Container Orchestration, Systems Programming" data-research="Serverless edge platforms, GitOps for embedded fleets, eBPF observability" data-email="rcruz@ue.edu.ph" data-image="">View Profile</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="col-md-6 col-lg-4">
-        <div class="card cpe-card h-100">
-          <div class="card-body text-center">
-            <div class="avatar mx-auto mb-3" style="background:linear-gradient(135deg,#6B4EFF,var(--accent))">AT</div>
-            <h5 class="card-title mb-1">Engr. Ana Torres</h5>
-            <p class="text-muted small mb-2">Instructor</p>
-            <div class="mb-2">
-              <span class="badge badge-ue">Digital Design</span>
-              <span class="badge badge-tech">FPGA / RTL</span>
-              <span class="badge badge-tech">Verilog/VHDL</span>
-            </div>
-            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Digital Logic Design, HDL Programming, FPGA-based Systems, ASIC Design Flow</p>
-            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: High-level synthesis optimization, approximate arithmetic circuits, FPGA acceleration</p>
-            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Engr. Ana Torres" data-title="Instructor" data-specialization="Digital Design, FPGA/RTL, Verilog/VHDL" data-courses="Digital Logic Design, HDL Programming, FPGA-based Systems, ASIC Design Flow" data-research="High-level synthesis optimization, approximate arithmetic circuits, FPGA acceleration" data-email="atorres@ue.edu.ph" data-image="">View Profile</button>
+            <p class="small text-muted mb-2"><i class="bi bi-book me-1"></i> Courses: Microprocessors, Software Design</p>
+            <p class="small text-muted mb-0"><i class="bi bi-flask me-1"></i> Research: Microprocessor-based system architecture, software engineering methodologies, embedded processing</p>
+            <button class="btn btn-sm btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#facultyModal" data-name="Engr. Joemhel Jhon Coral" data-title="Faculty Member, CpE Department" data-specialization="Microprocessors, Software Design, Computer Systems" data-courses="Microprocessors, Software Design" data-research="Microprocessor-based system architecture, software engineering methodologies, embedded processing" data-email="coral.joemheljhon@ue.edu.ph" data-image="">View Profile</button>
           </div>
         </div>
       </article>
@@ -195,7 +161,7 @@
               <h5><i class="bi bi-people me-1"></i> How to connect with faculty</h5>
               <p class="small text-muted mb-3">Whether you're a prospective student, current student, or industry partner:</p>
               <div class="row g-3">
-                <div class="col-md-6"><div class="p-3 border rounded-3 h-100"><strong><i class="bi bi-envelope me-1"></i> Email</strong><p class="small text-muted mb-0">Use the official <code>@ue.edu.ph</code> addresses. Faculty respond during office hours.</p></div></div>
+                <div class="col-md-6"><div class="p-3 border rounded-3 h-100"><strong><i class="bi bi-envelope me-1"></i> Email</strong><p class="small text-muted mb-0">Use official <code>@ue.edu.ph</code> addresses. Faculty respond during office hours.</p></div></div>
                 <div class="col-md-6"><div class="p-3 border rounded-3 h-100"><strong><i class="bi bi-calendar me-1"></i> Consultation hours</strong><p class="small text-muted mb-0">Posted on department bulletin boards and LMS. Schedule 15-min slots for advising.</p></div></div>
                 <div class="col-md-6"><div class="p-3 border rounded-3 h-100"><strong><i class="bi bi-linkedin me-1"></i> Research profiles</strong><p class="small text-muted mb-0">Check Google Scholar, ResearchGate, or the UE faculty directory for publications.</p></div></div>
                 <div class="col-md-6"><div class="p-3 border rounded-3 h-100"><strong><i class="bi bi-building me-1"></i> Department office</strong><p class="small text-muted mb-0">College of Engineering, UE Manila / Caloocan. Walk-ins welcome during business hours.</p></div></div>
@@ -287,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initialsEl.style.display = 'none';
       }else{
         imgEl.style.display = 'none';
-        const initials = name.split(' ').map(n => n[0]).join('').substring(0,2);
+        const initials = name.replace(/^Engr\.\s*|^Dr\.\s*/i, '').split(' ').map(n => n[0]).join('').substring(0,2);
         initialsEl.textContent = initials;
         initialsEl.style.display = 'grid';
       }
