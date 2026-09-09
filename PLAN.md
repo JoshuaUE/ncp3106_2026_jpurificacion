@@ -135,3 +135,31 @@ Single sticky navbar, identical across all pages, active page highlighted:
 - [x] Confirm whether dark/light mode toggle is in scope
 - [x] Use verification notices for illustrative faculty, SCPES, and project content
 - [ ] Replace or supplement illustrative content with verified official or student-provided details where available
+
+## Focused Follow-up Plan: About CpE Pages
+
+Scope: `about-cpe.html`, `cpe-ue.html`, and the shared theme rules in `css/style.css`. Do not change unrelated pages until this focused pass is verified.
+
+### 1. Reduce excessive card-body vertical space
+
+- [ ] Inspect the affected cards in the browser at desktop and mobile widths and record whether the extra space comes from Bootstrap row stretching, `.cpe-card { height: 100%; }`, `.card-body { flex: 1 1 auto; }`, or page-specific spacing utilities.
+- [ ] Compare the `about-cpe.html` hardware/software and sidebar cards with the `cpe-ue.html` objective, facility, research, and self-assessment cards to avoid changing the shared card behavior unnecessarily.
+- [ ] Add a narrowly scoped class or page-specific rule for these two pages if equal-height cards are the cause; preserve equal-height behavior where it improves card-grid alignment.
+- [ ] Keep normal card padding and readable text spacing, changing only the source of the unwanted empty height.
+- [ ] Verify that cards still align cleanly in multi-column layouts and collapse naturally at mobile widths.
+
+### 2. Fix dark-mode text contrast
+
+- [ ] Trace the computed color of headings, body text, `.text-muted`, list items, table text, accordion content, and card content after `data-theme="dark"` is applied.
+- [ ] Map the project variables (`--ink`, `--muted`, and `--card`) to the Bootstrap variables used by cards and typography, especially `--bs-body-color`, `--bs-secondary-color`, `--bs-card-color`, and related component variables.
+- [ ] Add dark-theme overrides in `css/style.css` so text inside `.cpe-card` and nested Bootstrap components inherits the light foreground color without forcing white text onto badges, buttons, links, or table headers that already have intentional colors.
+- [ ] Check muted text separately for readable contrast; do not rely on the light-theme Bootstrap secondary color in dark mode.
+- [ ] Test the theme toggle on both pages after a fresh load and after the saved `localStorage` theme is restored.
+
+### 3. Validation checklist
+
+- [ ] Serve the project with `py -m http.server` and test `about-cpe.html` and `cpe-ue.html` at narrow, tablet, and desktop widths.
+- [ ] In light mode, confirm card text, borders, links, accordions, tables, and badges retain their current appearance.
+- [ ] In dark mode, confirm every text block inside the affected cards is readable, including nested `<strong>`, headings, `.text-muted`, list items, accordion bodies, and table cells.
+- [ ] Confirm no horizontal overflow, clipped content, or newly introduced excessive card height.
+- [ ] Update this section's checkboxes only after the browser verification is complete.

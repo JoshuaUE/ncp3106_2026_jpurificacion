@@ -28,6 +28,14 @@
   --card:#1A212D;
   --nav-bg:#1A1214;
   --shadow:0 10px 30px rgba(0,0,0,.45);
+  --bs-body-color:var(--ink);
+  --bs-body-bg:var(--bg);
+  --bs-secondary-color:var(--muted);
+  --bs-card-color:var(--ink);
+  --bs-card-bg:var(--card);
+  --bs-list-group-color:var(--ink);
+  --bs-list-group-bg:var(--card);
+  --bs-list-group-border-color:var(--line);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -51,6 +59,38 @@ a{color:var(--ue-red)}
 }
 [data-theme="dark"] .eyebrow{color:#FF9AAE;background:rgba(255,255,255,.06);border-color:#333f52}
 .lead-muted{color:var(--muted)}
+
+/* Dark mode text contrast fixes */
+[data-theme="dark"] .text-muted{color:var(--muted) !important}
+[data-theme="dark"] .cpe-card,
+[data-theme="dark"] .cpe-card .card-body,
+[data-theme="dark"] .cpe-card .card-header,
+[data-theme="dark"] .cpe-card .card-footer{color:var(--ink)}
+[data-theme="dark"] .cpe-card h1,
+[data-theme="dark"] .cpe-card h2,
+[data-theme="dark"] .cpe-card h3,
+[data-theme="dark"] .cpe-card h4,
+[data-theme="dark"] .cpe-card h5,
+[data-theme="dark"] .cpe-card h6,
+[data-theme="dark"] .cpe-card .card-title{color:var(--ink)}
+[data-theme="dark"] .cpe-card p,
+[data-theme="dark"] .cpe-card li,
+[data-theme="dark"] .cpe-card span,
+[data-theme="dark"] .cpe-card strong,
+[data-theme="dark"] .cpe-card em,
+[data-theme="dark"] .cpe-card small{color:var(--ink)}
+[data-theme="dark"] .accordion-body{color:var(--ink)}
+[data-theme="dark"] .accordion-button{color:var(--ink)}
+[data-theme="dark"] .accordion-header{color:var(--ink)}
+[data-theme="dark"] .table-cpe,
+[data-theme="dark"] .table-cpe td,
+[data-theme="dark"] .table-cpe th,
+[data-theme="dark"] .table-cpe thead th{color:var(--ink)}
+[data-theme="dark"] .breadcrumb a{color:#FFD7DE}
+[data-theme="dark"] .timeline .t-item p{color:var(--ink)}
+[data-theme="dark"] .filter-pill{color:var(--ink);background:var(--card);border-color:var(--line)}
+[data-theme="dark"] .filter-pill.active,
+[data-theme="dark"] .filter-pill:hover{background:var(--ue-red);border-color:var(--ue-red);color:#fff}
 /* Navbar */
 .topbar-strip{background:#14181F;color:#C9D1DD;font-size:.82rem}
 .topbar-strip a{color:#fff;text-decoration:none}
@@ -87,6 +127,10 @@ a{color:var(--ue-red)}
 /* Cards */
 .cpe-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);height:100%;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease}
 .cpe-card:hover{transform:translateY(-4px)}
+
+/* Page-specific: disable forced equal-height on About CpE pages to avoid excessive vertical space */
+.about-cpe-page .cpe-card,
+.cpe-ue-page .cpe-card{height:auto}
 .cpe-card .card-icon{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-size:1.4rem;background:rgba(166,25,46,.10);border:1px solid rgba(166,25,46,.18)}
 .icon-teal{background:rgba(14,165,183,.12)!important;border-color:rgba(14,165,183,.28)!important}
 .card-img-top{height:190px;object-fit:cover}
