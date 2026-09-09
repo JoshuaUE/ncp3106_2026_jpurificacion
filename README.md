@@ -1,8 +1,14 @@
-# BS Computer Engineering at UE
+# BS Computer Engineering at UE — School Activity Project
 
-A responsive informational website for the Bachelor of Science in Computer Engineering program at the University of the East. The site introduces Computer Engineering, explains the CpE experience at UE, and presents specializations, careers, faculty, student organizations, projects, and contact information.
+This student-built website was created as a school activity for the BS Computer Engineering program at the University of the East. It serves as an informational project that introduces Computer Engineering, presents the CpE experience at UE, and organizes information about specializations, careers, faculty, student organizations, projects, and contact resources.
 
-> This is a student-built informational portal, not an official University of the East publication. Confirm admissions, curriculum, faculty, facilities, and announcements through official UE channels.
+> This project is submitted for educational purposes and is not an official University of the East publication. Confirm admissions, curriculum, faculty, facilities, events, and announcements through official UE channels.
+
+## Activity Description
+
+The activity applies fundamental web development skills to the design and implementation of a responsive informational website. The project demonstrates semantic HTML, CSS styling, Bootstrap components, JavaScript interactions, responsive layouts, accessibility considerations, and basic content organization.
+
+The intended audience includes prospective students, current students, parents, and visitors who want an orientation to Computer Engineering and the CpE community at UE. Official institutional information should always be checked through the University of the East.
 
 ## Features
 

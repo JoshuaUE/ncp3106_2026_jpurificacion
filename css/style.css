@@ -127,6 +127,7 @@ a{color:var(--ue-red)}
 /* Cards */
 .cpe-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);height:100%;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease}
 .cpe-card:hover{transform:translateY(-4px)}
+.scpes-participation-card{height:auto}
 
 /* Page-specific: disable forced equal-height on About CpE pages to avoid excessive vertical space */
 .about-cpe-page .cpe-card,
