@@ -9,6 +9,107 @@
   }catch(e){}
 
   document.addEventListener('DOMContentLoaded', () => {
+    // Interactive network background
+    const canvas = document.querySelector('.hero-canvas') || document.createElement('canvas');
+    if (!canvas.classList.contains('hero-canvas')) {
+      canvas.className = 'hero-canvas site-canvas';
+      document.body.prepend(canvas);
+    }
+
+    const ctx = canvas.getContext('2d');
+    if (ctx) {
+      let width, height;
+      const particles = [];
+      const mouse = { x: null, y: null, radius: 150 };
+
+      const resize = () => {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+      };
+
+      window.addEventListener('resize', resize);
+      resize();
+
+      const hero = canvas.closest('.hero') || document.body;
+      hero.addEventListener('mousemove', (event) => {
+        mouse.x = event.clientX;
+        mouse.y = event.clientY;
+      });
+      hero.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+      });
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 1;
+          this.vy = (Math.random() - 0.5) * 1;
+          this.radius = Math.random() * 1.5 + 0.5;
+        }
+
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.y < 0 || this.y > height) this.vy *= -1;
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(243, 244, 241, 0.4)';
+          ctx.fill();
+        }
+      }
+
+      for (let i = 0; i < 80; i++) particles.push(new Particle());
+
+      const animate = () => {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach((particle) => {
+          particle.update();
+          particle.draw();
+        });
+
+        for (let i = 0; i < particles.length; i++) {
+          if (mouse.x !== null) {
+            const dx = mouse.x - particles[i].x;
+            const dy = mouse.y - particles[i].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            if (distance < mouse.radius) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(mouse.x, mouse.y);
+              ctx.strokeStyle = `rgba(243, 244, 241, ${0.5 - (distance / mouse.radius) * 0.5})`;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            if (distance < 120) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(243, 244, 241, ${0.15 - (distance / 120) * 0.15})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(animate);
+      };
+
+      animate();
+    }
+
     // Footer year
     document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 
