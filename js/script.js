@@ -22,6 +22,15 @@
       const particles = [];
       const mouse = { x: null, y: null, radius: 150 };
 
+      const getConstellationColors = () => {
+        const styles = getComputedStyle(root);
+        return {
+          node: styles.getPropertyValue('--constellation-node-rgb').trim() || '166, 25, 46',
+          line: styles.getPropertyValue('--constellation-line-rgb').trim() || '166, 25, 46',
+          hot: styles.getPropertyValue('--constellation-hot-rgb').trim() || '166, 25, 46'
+        };
+      };
+
       const resize = () => {
         width = window.innerWidth;
         height = window.innerHeight;
@@ -58,10 +67,10 @@
           if (this.y < 0 || this.y > height) this.vy *= -1;
         }
 
-        draw() {
+        draw(colors) {
           ctx.beginPath();
           ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(243, 244, 241, 0.4)';
+          ctx.fillStyle = `rgba(${colors.node}, 0.4)`;
           ctx.fill();
         }
       }
@@ -69,10 +78,11 @@
       for (let i = 0; i < 80; i++) particles.push(new Particle());
 
       const animate = () => {
+        const colors = getConstellationColors();
         ctx.clearRect(0, 0, width, height);
         particles.forEach((particle) => {
           particle.update();
-          particle.draw();
+          particle.draw(colors);
         });
 
         for (let i = 0; i < particles.length; i++) {
@@ -84,7 +94,7 @@
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(mouse.x, mouse.y);
-              ctx.strokeStyle = `rgba(243, 244, 241, ${0.5 - (distance / mouse.radius) * 0.5})`;
+              ctx.strokeStyle = `rgba(${colors.hot}, ${0.5 - (distance / mouse.radius) * 0.5})`;
               ctx.lineWidth = 1;
               ctx.stroke();
             }
@@ -98,7 +108,7 @@
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.strokeStyle = `rgba(243, 244, 241, ${0.15 - (distance / 120) * 0.15})`;
+              ctx.strokeStyle = `rgba(${colors.line}, ${0.15 - (distance / 120) * 0.15})`;
               ctx.lineWidth = 0.5;
               ctx.stroke();
             }
@@ -128,6 +138,59 @@
         sync();
       });
     });
+
+    // Graduate cover-flow carousel: keep the active slide framed by its neighbors.
+    const graduateCarousel = document.querySelector('[data-graduate-carousel]');
+    if(graduateCarousel){
+      const slides = Array.from(graduateCarousel.querySelectorAll('.graduate-carousel-slide'));
+      const controls = graduateCarousel.querySelectorAll('[data-graduate-slide]');
+      let current = 0;
+      let timer;
+
+      const render = () => {
+        const total = slides.length;
+        const previous = (current - 1 + total) % total;
+        const next = (current + 1) % total;
+        slides.forEach((slide, index) => {
+          const isVisible = index === current || index === previous || index === next;
+          slide.classList.toggle('graduate-center', index === current);
+          slide.classList.toggle('graduate-prev', index === previous);
+          slide.classList.toggle('graduate-next', index === next);
+          slide.setAttribute('aria-hidden', String(!isVisible));
+        });
+      };
+
+      const move = (direction) => {
+        current = (current + direction + slides.length) % slides.length;
+        render();
+      };
+
+      const stop = () => window.clearInterval(timer);
+      const start = () => {
+        stop();
+        if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+          timer = window.setInterval(() => move(1), 5000);
+        }
+      };
+
+      controls.forEach(control => control.addEventListener('click', () => {
+        move(control.getAttribute('data-graduate-slide') === 'next' ? 1 : -1);
+        start();
+      }));
+      graduateCarousel.addEventListener('mouseenter', stop);
+      graduateCarousel.addEventListener('mouseleave', start);
+      graduateCarousel.addEventListener('focusin', stop);
+      graduateCarousel.addEventListener('focusout', start);
+      graduateCarousel.addEventListener('keydown', (event) => {
+        if(event.key === 'ArrowLeft' || event.key === 'ArrowRight'){
+          event.preventDefault();
+          move(event.key === 'ArrowRight' ? 1 : -1);
+          start();
+        }
+      });
+      render();
+      start();
+    }
 
     // Scroll-to-top
     const topBtn = document.getElementById('scrollTop');

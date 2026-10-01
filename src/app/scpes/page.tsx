@@ -29,7 +29,7 @@ export default function ScpesPage() {
             <span className="eyebrow"><i className="bi bi-people"></i> Who we are</span>
             <h2>SCPES at a glance</h2>
             <p className="lead-muted">
-              The Society of Computer Engineering Students (SCPES) is the official student organization representing BS Computer Engineering majors at the University of the East. We bridge students, faculty, and industry — building community, skills, and opportunities.
+              The Society of Computer Engineering Students (SCPES) represents BS Computer Engineering majors at the University of the East. It connects students with faculty, peers, and industry while creating opportunities to learn, collaborate, and contribute.
             </p>
             <div className="row g-3 mt-3">
               <div className="col-sm-6">
@@ -63,12 +63,12 @@ export default function ScpesPage() {
               <div className="card-body">
                 <h5><i className="bi bi-bullseye me-1"></i> Our objectives</h5>
                 <ul className="list-group list-group-flush mt-3">
-                  <li className="list-group-item bg-transparent px-0"><i className="bi bi-check-circle-fill text-success me-2"></i> <strong>Academic excellence</strong> — peer tutoring, review sessions, and study groups for core CpE courses.</li>
-                  <li className="list-group-item bg-transparent px-0"><i className="bi bi-check-circle-fill text-success me-2"></i> <strong>Technical skill-building</strong> — workshops, hackathons, and certification prep beyond the curriculum.</li>
-                  <li className="list-group-item bg-transparent px-0"><i className="bi bi-check-circle-fill text-success me-2"></i> <strong>Industry readiness</strong> — tech talks, company visits, resume clinics, and internship matching.</li>
-                  <li className="list-group-item bg-transparent px-0"><i className="bi bi-check-circle-fill text-success me-2"></i> <strong>Community &amp; welfare</strong> — social events, mental health awareness, and student advocacy.</li>
-                  <li className="list-group-item bg-transparent px-0"><i className="bi bi-check-circle-fill text-success me-2"></i> <strong>Leadership development</strong> — officer training, project management, and public speaking opportunities.</li>
-                  <li className="list-group-item bg-transparent px-0"><i className="bi bi-check-circle-fill text-success me-2"></i> <strong>Alumni engagement</strong> — mentorship programs, career panels, and networking events.</li>
+                  <li className="list-group-item bg-transparent px-0"><i className="bi bi-check-circle-fill text-success me-2"></i> <strong>Academic excellence</strong>: peer tutoring, review sessions, and study groups for core CpE courses.</li>
+                  <li className="list-group-item bg-transparent px-0"><i className="bi bi-check-circle-fill text-success me-2"></i> <strong>Technical skill-building</strong>: workshops, hackathons, and certification preparation beyond the curriculum.</li>
+                  <li className="list-group-item bg-transparent px-0"><i className="bi bi-check-circle-fill text-success me-2"></i> <strong>Industry readiness</strong>: technical talks, company visits, resume clinics, and internship guidance.</li>
+                  <li className="list-group-item bg-transparent px-0"><i className="bi bi-check-circle-fill text-success me-2"></i> <strong>Community and welfare</strong>: social events, mental-health awareness, and student advocacy.</li>
+                  <li className="list-group-item bg-transparent px-0"><i className="bi bi-check-circle-fill text-success me-2"></i> <strong>Leadership development</strong>: officer training, project management, and public-speaking opportunities.</li>
+                  <li className="list-group-item bg-transparent px-0"><i className="bi bi-check-circle-fill text-success me-2"></i> <strong>Alumni engagement</strong>: mentorship programs, career panels, and networking events.</li>
                 </ul>
               </div>
             </div>
@@ -84,7 +84,7 @@ export default function ScpesPage() {
         <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
           <div>
             <span className="eyebrow"><i className="bi bi-calendar-event"></i> Activities</span>
-            <h2>What we do — a typical year</h2>
+            <h2>What we do throughout the year</h2>
           </div>
         </div>
         <div className="accordion accordion-flush mt-3" id="activitiesAcc">
@@ -115,7 +115,7 @@ export default function ScpesPage() {
           <div className="col-lg-6">
             <span className="eyebrow"><i className="bi bi-person-plus"></i> Get involved</span>
             <h2>Join SCPES</h2>
-            <p className="lead-muted">Open to all BS Computer Engineering students at UE. No interview, no fee — just show up and contribute.</p>
+            <p className="lead-muted">SCPES is open to BS Computer Engineering students at UE. Students can participate by attending activities, joining a committee, or volunteering their skills.</p>
             <div className="row g-3 mt-3">
               <div className="col-md-6">
                 <div className="p-3 border rounded-3 h-100">
@@ -132,7 +132,7 @@ export default function ScpesPage() {
               <div className="col-md-6">
                 <div className="p-3 border rounded-3 h-100">
                   <strong><i className="bi bi-check-circle me-1"></i> Volunteer at an event</strong>
-                  <p className="small text-muted mb-0">Logistics, registration, documentation, livestream — every role counts.</p>
+                  <p className="small text-muted mb-0">Logistics, registration, documentation, and livestream support all make a difference.</p>
                 </div>
               </div>
               <div className="col-md-6">
@@ -152,19 +152,19 @@ export default function ScpesPage() {
                   <li className="list-group-item bg-transparent px-0">
                     <a href="https://www.facebook.com/uescpes/" target="_blank" rel="noopener" className="text-decoration-none d-flex align-items-center">
                       <i className="bi bi-facebook text-primary me-2 fs-5"></i>
-                      <div><strong>Facebook Page</strong> — announcements, event pages, photos<br/><small className="text-muted">facebook.com/uescpes</small></div>
+                      <div><strong>Facebook Page</strong>: announcements, event pages, and photos<br/><small className="text-muted">facebook.com/uescpes</small></div>
                     </a>
                   </li>
                   <li className="list-group-item bg-transparent px-0">
                     <a href="https://www.instagram.com/uescpes_official" target="_blank" rel="noopener" className="text-decoration-none d-flex align-items-center">
                       <i className="bi bi-instagram text-danger me-2 fs-5"></i>
-                      <div><strong>Instagram</strong> — stories, reels, officer takeovers<br/><small className="text-muted">@uescpes_official</small></div>
+                      <div><strong>Instagram</strong>: stories, reels, and officer takeovers<br/><small className="text-muted">@uescpes_official</small></div>
                     </a>
                   </li>
                   <li className="list-group-item bg-transparent px-0">
                     <a href="mailto:scpesofficial@gmail.com" className="text-decoration-none d-flex align-items-center">
                       <i className="bi bi-envelope text-success me-2 fs-5"></i>
-                      <div><strong>Email</strong> — formal inquiries, partnership proposals<br/><small className="text-muted">scpesofficial@gmail.com</small></div>
+                      <div><strong>Email</strong>: formal inquiries and partnership proposals<br/><small className="text-muted">scpesofficial@gmail.com</small></div>
                     </a>
                   </li>
                 </ul>

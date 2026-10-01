@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme={theme}>
       <head>
-        <title>BS Computer Engineering – UE</title>
+        <title>BS Computer Engineering at UE</title>
         {/* Bootstrap CSS – kept for existing markup */}
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -83,7 +83,7 @@ export default function RootLayout({
         {/* Footer – simple placeholder */}
         <footer className="site-footer py-5 text-center bg-gray-800 text-gray-200">
           <div className="container">
-            <p>© {new Date().getFullYear()} CpE Information Portal – Built with Next.js, React, Tailwind, and shadcn/ui.</p>
+            <p>© {new Date().getFullYear()} CpE Information Portal. Built with Next.js, React, Tailwind, and shadcn/ui.</p>
           </div>
         </footer>
 
